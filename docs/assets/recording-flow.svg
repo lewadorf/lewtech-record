@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">From your screen to a local MP4</title>
+  <desc id="desc">Choose a screen or camera, record with pause and resume, then save an MP4 to your Mac. No cloud upload.</desc>
+  <rect width="1200" height="420" rx="24" fill="#eeeade"/>
+  <g font-family="Manrope, -apple-system, BlinkMacSystemFont, Arial, sans-serif" fill="#263a2e">
+    <text x="48" y="55" font-size="13" letter-spacing="3">A SIMPLE, LOCAL WORKFLOW</text>
+    <path d="M376 197h42m-10-6 10 6-10 6m368-6h42m-10-6 10 6-10 6" fill="none" stroke="#925237" stroke-width="2"/>
+    <g transform="translate(48 89)">
+      <rect width="320" height="284" rx="16" fill="#f7f5ef"/>
+      <text x="24" y="36" font-size="12" fill="#925237">01 / CHOOSE</text>
+      <rect x="96" y="65" width="128" height="80" rx="7" fill="#c7cabc" stroke="#263a2e" stroke-width="2"/>
+      <path d="M144 146v14m32-14v14m-44 0h56" fill="none" stroke="#263a2e" stroke-width="2"/>
+      <circle cx="213" cy="133" r="23" fill="#263a2e" stroke="#f7f5ef" stroke-width="5"/>
+      <circle cx="213" cy="128" r="6" fill="#eeeade"/>
+      <path d="M202 143q11-17 22 0" fill="#eeeade"/>
+      <text x="24" y="207" font-size="23" font-weight="600">Frame your story.</text>
+      <text x="24" y="236" font-size="14">Screen, window or camera.</text>
+      <text x="24" y="257" font-size="14">Preview before you press record.</text>
+    </g>
+    <g transform="translate(440 89)">
+      <rect width="320" height="284" rx="16" fill="#263a2e"/>
+      <text x="24" y="36" font-size="12" fill="#c7cabc">02 / RECORD</text>
+      <circle cx="160" cy="112" r="42" fill="#925237"/>
+      <circle cx="160" cy="112" r="16" fill="#eeeade"/>
+      <g stroke="#c7cabc" stroke-width="4" stroke-linecap="round">
+        <path d="M72 105v14m12-24v34m12-28v22m128-22v22m12-32v42m12-27v12"/>
+      </g>
+      <text x="24" y="207" font-size="23" font-weight="600" fill="#eeeade">Keep your rhythm.</text>
+      <text x="24" y="236" font-size="14" fill="#eeeade">Pause. Resume. Move your facecam.</text>
+      <text x="24" y="257" font-size="14" fill="#eeeade">Finish when you are ready.</text>
+    </g>
+    <g transform="translate(832 89)">
+      <rect width="320" height="284" rx="16" fill="#f7f5ef"/>
+      <path d="M126 64h48l24 24v77h-72z" fill="#c7cabc" stroke="#263a2e" stroke-width="2"/>
+      <path d="M174 64v24h24" fill="none" stroke="#263a2e" stroke-width="2"/>
+      <path d="m150 105 26 17-26 17z" fill="#925237"/>
+      <text x="24" y="36" font-size="12" fill="#925237">03 / KEEP</text>
+      <text x="24" y="207" font-size="23" font-weight="600">Your file. Your Mac.</text>
+      <text x="24" y="236" font-size="14">Save to your local video library.</text>
+      <text x="24" y="257" font-size="14">Export an MP4. Share it your way.</text>
+    </g>
+  </g>
+</svg>

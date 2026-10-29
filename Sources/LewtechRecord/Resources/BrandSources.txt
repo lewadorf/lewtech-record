@@ -1,0 +1,16 @@
+Lewtech Record brand assets
+
+Source: https://lewtech.no/ (user-requested Lewtech branding)
+Public CSS inspected: https://lewtech.no/assets/index-C2tRvRSS.css
+Brand ink: #263a2e
+Brand dark: #25372c
+Brand paper: #eeeade
+Brand muted: #c7cabc
+Brand accent: #925237
+Button light: #f1ede3
+Typography: Manrope; bundled weights 400, 500, 600.
+Logo: https://lewtech.no/logo.webp (converted to PNG for AppKit compatibility)
+Font source: https://lewtech.no/perspektiv/manrope-{400,500,600}.ttf
+
+Native UI uses a slightly lighter #f7f5ef surface for contrast within the same warm palette.
+No remote assets are required at runtime.

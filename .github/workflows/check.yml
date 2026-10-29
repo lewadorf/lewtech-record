@@ -1,0 +1,21 @@
+name: macOS checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build-and-verify:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          swift --version
+          xcrun --sdk macosx --show-sdk-version
+      - name: Build app
+        run: ./scripts/build.sh
+      - name: Verify media and persistence
+        run: ./scripts/verify.sh

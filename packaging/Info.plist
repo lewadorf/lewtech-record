@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleName</key><string>Lewtech Record</string>
+<key>CFBundleDisplayName</key><string>Lewtech Record</string>
+<key>CFBundleIdentifier</key><string>no.lewtech.record</string>
+<key>CFBundleExecutable</key><string>LewtechRecord</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>1.0.0</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>CFBundleIconFile</key><string>AppIcon</string>
+<key>LSMinimumSystemVersion</key><string>15.0</string>
+<key>NSHighResolutionCapable</key><true/>
+<key>NSCameraUsageDescription</key><string>Lewtech Record bruker kameraet ditt når du velger opptak med kamera. Videoen lagres bare på Mac-en din.</string>
+<key>NSMicrophoneUsageDescription</key><string>Lewtech Record bruker mikrofonen til stemmen din i videoopptak. Lyden lagres bare på Mac-en din.</string>
+<key>NSAudioCaptureUsageDescription</key><string>Lewtech Record tar opp lyd når du har valgt det i opptaksinnstillingene.</string>
+<key>NSPrincipalClass</key><string>NSApplication</string>
+<key>CFBundleDevelopmentRegion</key><string>nb</string>
+</dict></plist>
