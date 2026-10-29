@@ -5,7 +5,7 @@
 <h1 align="center">Lewtech Record</h1>
 <p align="center"><strong>A little less friction. A lot more showing.</strong><br>Native screen, camera and microphone recording. Everything stays on your Mac.</p>
 <p align="center">
-  <a href="https://github.com/lewadorf/lewtech-record/releases">Downloads</a> ·
+  <a href="docs/INSTALLASJON.md">Kom i gang / Install</a> ·
   <a href="#get-started">Get started</a> ·
   <a href="docs/BRUKERVEILEDNING.md">Norsk brukerveiledning</a> ·
   <a href="CONTRIBUTING.md">Contribute</a>
@@ -34,17 +34,30 @@ Built by **[Leander Wachendorf](https://github.com/lewadorf)**. The app interfac
 
 ## Get started
 
-### Download an app build
+### For everyday Mac users
 
-Check **[GitHub Releases](https://github.com/lewadorf/lewtech-record/releases)** for packaged builds and their compatibility notes. If no app archive is listed, use the source installation below. GitHub's automatically generated “Source code” ZIP is the source project, not an installable app.
+**[Norsk: enkel installasjonsveiledning →](docs/INSTALLASJON.md)**
 
-For a published app ZIP:
+> **Current availability:** only a developer preview is available. It is not yet signed with Apple Developer ID or notarized by Apple. A recommended download for non-technical users is **not available yet**. If you want a normal download-and-open experience, wait for that release; you do not need to install developer tools or bypass a macOS warning.
 
-1. Download the archive matching your Mac's processor and extract it.
-2. Move **Lewtech Record.app** to your **Applications** folder. Quit an older running copy first.
-3. Open the app from Finder and grant the permissions needed for your chosen recording mode.
+The intended installation for the signed release is:
 
-Local builds use an **ad-hoc signature**. They are not Apple Developer ID signed or notarized, and macOS may block downloaded builds. Only for a build you trust, follow Apple's **[opening an app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac)** guidance. Building from source is also supported. Do not disable Gatekeeper globally.
+1. **Check your Mac:** Apple menu → About This Mac. The current app build targets **Apple Silicon (M-series chip), macOS 15 or newer**. Windows, iPhone, iPad and Intel Mac downloads are not currently provided.
+2. **Download from this project's [Releases page](https://github.com/lewadorf/lewtech-record/releases).** Choose a release explicitly marked **Developer ID signed and Apple notarized**, with an app download matching your Mac. “Source code” is for developers, not the app.
+3. **Open the download and drag Lewtech Record into Applications.** Open it from Applications. A normal “downloaded from the internet” confirmation can appear on first launch.
+4. **Allow only what you need:** screen permission for screen recording, camera for facecam, and microphone for your voice. Record a short test and check the video and sound.
+
+If macOS says the developer cannot be verified, Apple cannot check the app, or the app is damaged / will harm your computer, stop and consult [support](SUPPORT.md). Do not disable macOS security or run Terminal commands to get past the warning. See [Apple's explanation of these messages](https://support.apple.com/en-us/102445).
+
+<details>
+<summary><strong>Developer preview downloads</strong></summary>
+
+The [current preview](https://github.com/lewadorf/lewtech-record/releases/tag/v1.0.0-preview.1) is intended for testers who understand its distribution limitations. It is ad-hoc signed, not Developer ID signed or notarized. Passing automated tests is not equivalent to Apple notarization or complete device testing. The preview ZIP and checksum remain available on its release page.
+
+</details>
+
+<details>
+<summary><strong>For developers: build and install from source</strong></summary>
 
 ### Install from source
 
@@ -68,6 +81,8 @@ open "$HOME/Applications/Lewtech Record.app"
 The installer builds the app, verifies its signature and installs it to `~/Applications/Lewtech Record.app`. An existing installation is backed up to `~/Applications/.Lewtech Record backups/`. **Your recordings are not changed.** Quit Lewtech Record, including its menu-bar instance, before installing an update.
 
 The build uses the current Mac's architecture. A build made on Apple Silicon is not automatically an Intel or universal build.
+
+</details>
 
 ## Your first recording
 

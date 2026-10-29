@@ -6,16 +6,11 @@ En lokal Mac-app for skjerm, kamera og mikrofon. Loom-inspirert opptaksflyt med 
 
 ## Installer og åpne
 
-Krever macOS 15 eller nyere og Apples Command Line Tools for å bygge. Full Xcode er ikke nødvendig. Kjør fra prosjektmappen i Terminal:
+**[Start med den enkle installasjonsveiledningen](INSTALLASJON.md).** Den forklarer hvilken Mac som støttes, hvor appen skal lastes ned, og hvilke tillatelser du trenger.
 
-```sh
-./scripts/install.sh
-open "$HOME/Applications/Lewtech Record.app"
-```
+Foreløpig finnes bare en testversjon som ikke er Apple-notarisert. En anbefalt nedlasting for brukere uten teknisk erfaring er ikke klar ennå. Vent på en signert og notarisert utgave dersom du ønsker vanlig installasjon uten sikkerhetsunntak. Du trenger ikke Terminal eller utviklerverktøy for den planlagte brukerversjonen.
 
-Installeringsskriptet bygger appen, kontrollerer signaturen og legger den i `~/Applications/Lewtech Record.app`. Avslutt en eventuell åpen Lewtech Record først, også fra menylinjen. En tidligere installasjon beholdes i `~/Applications/.Lewtech Record backups/`. Opptaksmappen berøres ikke.
-
-Appen kan deretter åpnes fra Finder uten Terminal. Bygget er lokalt signert; App Store-publisering og notariseringsoppsett inngår ikke.
+Utviklere finner bygge- og installasjonskommandoer i [README](../README.md#get-started).
 
 ## Ta opp en video
 
@@ -77,7 +72,8 @@ SwiftUI og AppKit bygger grensesnittet. ScreenCaptureKit henter skjerm/vindu, AV
 `Sources/LewtechRecord/Resources/BrandSources.txt` dokumenterer brandkildene. Manrope-fontens lisens følger med i ressursmappen. Appikonet kan gjenskapes med `scripts/generate-icon.swift` og macOS `iconutil`.
 
 
-### Skjermtilgang står på, men macOS avviser den
+<details>
+<summary>For utviklere: skjermtilgang etter et nytt lokalt bygg</summary>
 
 Lokale ad-hoc-signerte oppdateringer får en ny kodesignatur. En gammel skjermtillatelse kan derfor stå på i Systeminnstillinger selv om den gjelder et tidligere bygg. Avslutt Lewtech Record og nullstill bare appens skjermtillatelse:
 
@@ -86,3 +82,5 @@ tccutil reset ScreenCapture no.lewtech.record
 ```
 
 Åpne den installerte appen fra Finder, gå til Opptaksstudio, og godkjenn skjermtilgang på nytt. Dette sletter ingen opptak. En stabil Apple Development/Developer ID-signatur bør brukes for oppdateringer som skal bevare tillatelser mellom bygg.
+
+</details>

@@ -55,3 +55,18 @@ For the longer fragmented-MP4 regression test, run `LEWTECH_STRESS_SECONDS=130 .
 The script builds for the host architecture and uses an ad-hoc signature. It does not create a universal binary, obtain certificates or notarize a build. A public binary intended for frictionless installation needs a separate Developer ID signing and Apple notarization process. Never commit certificates, signing credentials or API tokens.
 
 GitHub Actions builds, packages and verifies the app on Apple Silicon for pushes and pull requests. Successful runs retain the app ZIP and checksum as a workflow artifact for 14 days. Release publication remains explicit so an untested binary is not automatically presented as a stable release.
+
+## Gate for a general-user release
+
+The current ad-hoc preview is not the recommended non-technical installation path. Before publishing a release as suitable for everyday users:
+
+1. Obtain an Apple Developer Program membership and a **Developer ID Application** certificate with its private key. An **Apple Development** certificate is not a substitute for this distribution certificate.
+2. Sign the application using Developer ID, a secure timestamp and the hardened runtime. Configure and test the camera/microphone entitlements needed by the capture features.
+3. Submit the distribution to Apple's notary service, require an accepted result, staple the ticket to the app / supported container, and validate it.
+4. Package the accepted build in a DMG with an Applications shortcut, or a clearly named app ZIP. Check the final downloaded artifact with Gatekeeper on a separate Mac, with normal download quarantine intact.
+5. Complete real-device recording, microphone sync, window/screen capture, long-session, clean installation and update checks. Confirm the process requires no Terminal commands or security exceptions.
+6. Publish an explicitly labeled **Developer ID signed and Apple notarized** release, update the README and Norwegian installation guide with its direct download, and retain a plain-language support path.
+
+Never describe a passing build, checksum or ad-hoc signature as Apple notarization. Keep developer previews clearly separated from recommended user downloads.
+
+Apple references: [Developer ID](https://developer.apple.com/developer-id/), [enrollment](https://developer.apple.com/programs/enroll/), [notarizing macOS software](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution).
