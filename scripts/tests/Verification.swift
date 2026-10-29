@@ -17,6 +17,13 @@ struct LewtechVerification {
         var suites: [[String: Any]] = []
         var passed = true
         do {
+            let count = try runLocalizationChecks()
+            suites.append(["suite": "localization", "passed": true, "checks": count])
+        } catch {
+            passed = false
+            suites.append(["suite": "localization", "passed": false, "error": error.localizedDescription])
+        }
+        do {
             let count = try runTimelineChecks()
             suites.append(["suite": "timeline", "passed": true, "checks": count])
         } catch {

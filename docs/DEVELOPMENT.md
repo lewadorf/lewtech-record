@@ -70,3 +70,7 @@ The current ad-hoc preview is not the recommended non-technical installation pat
 Never describe a passing build, checksum or ad-hoc signature as Apple notarization. Keep developer previews clearly separated from recommended user downloads.
 
 Apple references: [Developer ID](https://developer.apple.com/developer-id/), [enrollment](https://developer.apple.com/programs/enroll/), [notarizing macOS software](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution).
+
+## Localization
+
+See [Localization](LOCALIZATION.md) for the four-language catalog, automatic language selection, persistent overrides, packaging and translation checks. `scripts/verify.sh` includes localization validation.

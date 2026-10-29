@@ -47,6 +47,7 @@ final class RecordingOverlay: NSObject, NSWindowDelegate {
 }
 
 private struct FloatingControls: View {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     @ObservedObject var model: AppModel
     @ObservedObject var capture: CaptureController
     var body: some View {
@@ -57,11 +58,11 @@ private struct FloatingControls: View {
             Rectangle().fill(.white.opacity(0.2)).frame(width: 1, height: 22)
             Button { capture.state == .paused ? capture.resume() : capture.pause() } label: {
                 Image(systemName: capture.state == .paused ? "play.fill" : "pause.fill").frame(width: 24, height: 30)
-            }.help(capture.state == .paused ? "Fortsett opptaket" : "Pause opptaket")
+            }.help(capture.state == .paused ? L10n.tr("Fortsett opptaket") : L10n.tr("Pause opptaket"))
             Button { Task { await model.finish() } } label: {
                 Image(systemName: "stop.fill").frame(width: 30, height: 30).background(.white.opacity(0.15), in: RoundedRectangle(cornerRadius: 8))
-            }.help("Stopp og lagre")
-            Button { model.showMainWindow() } label: { Image(systemName: "arrow.up.left.and.arrow.down.right").frame(width: 22, height: 30) }.help("Åpne opptaksstudioet")
+            }.help(L10n.tr("Stopp og lagre"))
+            Button { model.showMainWindow() } label: { Image(systemName: "arrow.up.left.and.arrow.down.right").frame(width: 22, height: 30) }.help(L10n.tr("Åpne opptaksstudioet"))
         }
         .buttonStyle(.plain).foregroundStyle(.white)
         .padding(.horizontal, 20).frame(height: 56)
@@ -71,6 +72,7 @@ private struct FloatingControls: View {
 }
 
 private struct BubblePreview: View {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     @ObservedObject var capture: CaptureController
     var body: some View {
         if let image = capture.cameraPreview { CapturePreview(image: image) }

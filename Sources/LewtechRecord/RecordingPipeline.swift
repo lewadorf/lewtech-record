@@ -75,10 +75,10 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
             audioInput = input
         } else { audioInput = nil }
         super.init()
-        guard writer.canAdd(videoInput) else { throw CaptureFailure.message("Kunne ikke opprette videospor.") }
+        guard writer.canAdd(videoInput) else { throw CaptureFailure.message(L10n.tr("Kunne ikke opprette videospor.")) }
         writer.add(videoInput)
         if let audioInput {
-            guard writer.canAdd(audioInput) else { throw CaptureFailure.message("Kunne ikke opprette lydspor.") }
+            guard writer.canAdd(audioInput) else { throw CaptureFailure.message(L10n.tr("Kunne ikke opprette lydspor.")) }
             writer.add(audioInput)
         }
     }
@@ -112,7 +112,7 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
               let attachments = CMSampleBufferGetSampleAttachmentsArray(buffer, createIfNecessary: false) as? [[SCStreamFrameInfo: Any]],
               let status = attachments.first?[.status] as? Int else { return }
         if accepting && (status == SCFrameStatus.suspended.rawValue || status == SCFrameStatus.stopped.rawValue) {
-            fail("Skjermkilden er ikke lenger tilgjengelig. Opptaket avsluttes og lagres.")
+            fail(L10n.tr("Skjermkilden er ikke lenger tilgjengelig. Opptaket avsluttes og lagres."))
             return
         }
         guard status == SCFrameStatus.complete.rawValue, let image = buffer.imageBuffer else { return }
@@ -151,7 +151,7 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
         if mode == .screenAndCamera && cameraBuffer == nil { return }
         let hostTime = Self.now
         if !started {
-            guard writer.startWriting() else { fail(writer.error?.localizedDescription ?? "Videoopptaket kunne ikke startes."); return }
+            guard writer.startWriting() else { fail(writer.error?.localizedDescription ?? L10n.tr("Videoopptaket kunne ikke startes.")); return }
             writer.startSession(atSourceTime: .zero)
             timeline.start(at: hostTime)
             started = true
@@ -162,7 +162,7 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
         guard !lastPTS.isValid || pts > lastPTS else { return }
         var output: CVPixelBuffer?
         guard CVPixelBufferPoolCreatePixelBuffer(kCFAllocatorDefault, pool, &output) == kCVReturnSuccess,
-              let output else { fail("Kunne ikke reservere minne til videobildet."); return }
+              let output else { fail(L10n.tr("Kunne ikke reservere minne til videobildet.")); return }
         let bounds = CGRect(x: 0, y: 0, width: width, height: height)
         var composed = fit(CIImage(cvPixelBuffer: source), into: bounds)
         if mode == .screenAndCamera, let cameraBuffer {
@@ -176,12 +176,12 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
         }
         context.render(composed, to: output, bounds: bounds, colorSpace: CGColorSpaceCreateDeviceRGB())
         guard adaptor.append(output, withPresentationTime: pts) else {
-            fail(writer.error?.localizedDescription ?? "Kunne ikke skrive videobildet til disk."); return
+            fail(writer.error?.localizedDescription ?? L10n.tr("Kunne ikke skrive videobildet til disk.")); return
         }
         lastPTS = pts; frameCount += 1
         if frameCount % 150 == 0 {
             if let available = try? outputURL.deletingLastPathComponent().resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey]).volumeAvailableCapacityForImportantUsage,
-               available < 200_000_000 { fail("Det er lite ledig diskplass. Opptaket avsluttes og lagres.") }
+               available < 200_000_000 { fail(L10n.tr("Det er lite ledig diskplass. Opptaket avsluttes og lagres.")) }
         }
     }
 
@@ -221,8 +221,8 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
         let result = timings.withUnsafeBufferPointer {
             CMSampleBufferCreateCopyWithNewTiming(allocator: kCFAllocatorDefault, sampleBuffer: buffer, sampleTimingEntryCount: count, sampleTimingArray: $0.baseAddress!, sampleBufferOut: &adjusted)
         }
-        guard result == noErr, let adjusted else { fail("Kunne ikke synkronisere mikrofonsporet."); return }
-        if !audioInput.append(adjusted) { fail(writer.error?.localizedDescription ?? "Kunne ikke lagre mikrofonsporet.") }
+        guard result == noErr, let adjusted else { fail(L10n.tr("Kunne ikke synkronisere mikrofonsporet.")); return }
+        if !audioInput.append(adjusted) { fail(writer.error?.localizedDescription ?? L10n.tr("Kunne ikke lagre mikrofonsporet.")) }
         lastAudioPTS = pts
     }
 
@@ -242,10 +242,10 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
                 self.screenBuffer = nil; self.cameraBuffer = nil
                 guard self.started, self.frameCount > 0 else {
                     self.writer.cancelWriting()
-                    continuation.resume(throwing: CaptureFailure.message("Ingen videobilder ble mottatt. Kontroller kilde og tillatelser, og prøv igjen.")); return
+                    continuation.resume(throwing: CaptureFailure.message(L10n.tr("Ingen videobilder ble mottatt. Kontroller kilde og tillatelser, og prøv igjen."))); return
                 }
                 guard self.writer.status == .writing else {
-                    continuation.resume(throwing: self.writer.error ?? CaptureFailure.message("Videofilen kunne ikke ferdigstilles.")); return
+                    continuation.resume(throwing: self.writer.error ?? CaptureFailure.message(L10n.tr("Videofilen kunne ikke ferdigstilles."))); return
                 }
                 self.writer.endSession(atSourceTime: CMTime(seconds: max(duration, self.lastPTS.seconds + 1.0 / 30), preferredTimescale: 60_000))
                 self.videoInput.markAsFinished(); self.audioInput?.markAsFinished()
@@ -253,7 +253,7 @@ final class RecordingPipeline: NSObject, SCStreamOutput, AVCaptureVideoDataOutpu
                     if self.writer.status == .completed {
                         continuation.resume(returning: RecordingResult(url: self.outputURL, duration: duration))
                     } else {
-                        continuation.resume(throwing: self.writer.error ?? CaptureFailure.message("Lagring av videoen mislyktes."))
+                        continuation.resume(throwing: self.writer.error ?? CaptureFailure.message(L10n.tr("Lagring av videoen mislyktes.")))
                     }
                 }
             }

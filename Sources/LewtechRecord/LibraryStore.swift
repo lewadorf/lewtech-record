@@ -43,11 +43,11 @@ final class LibraryStore: ObservableObject {
         case emptyTitle, missingRecording, invalidVideo, unsupportedVersion, invalidManifest
         var errorDescription: String? {
             switch self {
-            case .emptyTitle: return "Gi opptaket et navn før du lagrer."
-            case .missingRecording: return "Videofilen finnes ikke på den lagrede plasseringen. Den kan ha blitt flyttet i Finder."
-            case .invalidVideo: return "Videofilen kunne ikke åpnes. Originalfilen er beholdt."
-            case .unsupportedVersion: return "Biblioteket er opprettet av en nyere versjon av Lewtech Record."
-            case .invalidManifest: return "Bibliotekets metadata inneholder en ugyldig filreferanse."
+            case .emptyTitle: return L10n.tr("Gi opptaket et navn før du lagrer.")
+            case .missingRecording: return L10n.tr("Videofilen finnes ikke på den lagrede plasseringen. Den kan ha blitt flyttet i Finder.")
+            case .invalidVideo: return L10n.tr("Videofilen kunne ikke åpnes. Originalfilen er beholdt.")
+            case .unsupportedVersion: return L10n.tr("Biblioteket er opprettet av en nyere versjon av Lewtech Record.")
+            case .invalidManifest: return L10n.tr("Bibliotekets metadata inneholder en ugyldig filreferanse.")
             }
         }
     }
@@ -72,11 +72,11 @@ final class LibraryStore: ObservableObject {
         didAttemptRecovery = true
         guard !interruptedCandidates.isEmpty else { return 0 }
         guard storageFailure == nil else {
-            recoveryMessage = "Fant \(interruptedCandidates.count) avbrutte opptak. Biblioteket må kunne åpnes før de kan gjenopprettes. Filene er bevart i \(recoveryDirectory.path)."
+            recoveryMessage = L10n.tr("Fant \(interruptedCandidates.count) avbrutte opptak. Biblioteket må kunne åpnes før de kan gjenopprettes. Filene er bevart i \(recoveryDirectory.path).")
             return 0
         }
         recoveringInterruptedRecordings = true
-        recoveryMessage = "Undersøker \(interruptedCandidates.count) opptak fra forrige kjøring…"
+        recoveryMessage = L10n.tr("Undersøker \(interruptedCandidates.count) opptak fra forrige kjøring…")
         defer { recoveringInterruptedRecordings = false }
         var restored = 0
         var failures: [String] = []
@@ -97,14 +97,14 @@ final class LibraryStore: ObservableObject {
         }
         let remaining = interruptedCandidates.filter { fileManager.fileExists(atPath: $0.path) }.count
         var parts: [String] = []
-        if restored > 0 { parts.append("Gjenopprettet \(restored) opptak i biblioteket.") }
+        if restored > 0 { parts.append(L10n.tr("Gjenopprettet \(restored) opptak i biblioteket.")) }
         if remaining > 0 {
-            parts.append("\(remaining) avbrutte opptak kunne ikke gjenopprettes automatisk. Filene er beholdt i \(recoveryDirectory.path).")
+            parts.append(L10n.tr("\(remaining) avbrutte opptak kunne ikke gjenopprettes automatisk. Filene er beholdt i \(recoveryDirectory.path)."))
         }
         if !failures.isEmpty && remaining == 0 {
-            parts.append("En videofil ble bevart, men kunne ikke registreres ferdig. Se feilmeldingen for filplasseringen.")
+            parts.append(L10n.tr("En videofil ble bevart, men kunne ikke registreres ferdig. Se feilmeldingen for filplasseringen."))
         }
-        if parts.isEmpty { parts.append("De tidligere avbrutte opptakene er ikke lenger i gjenopprettingsmappen.") }
+        if parts.isEmpty { parts.append(L10n.tr("De tidligere avbrutte opptakene er ikke lenger i gjenopprettingsmappen.")) }
         recoveryMessage = parts.joined(separator: " ")
         return restored
     }
@@ -130,7 +130,7 @@ final class LibraryStore: ObservableObject {
                     // Keep the exact original before reconstructing the index from completed video files.
                     let backup = directory.appendingPathComponent("library-backup-\(UUID().uuidString).json")
                     try fileManager.copyItem(at: manifestURL, to: backup)
-                    errorMessage = "Bibliotekoversikten måtte gjenopprettes fra videofilene. En kopi av den opprinnelige oversikten er bevart i bibliotekmappen."
+                    errorMessage = L10n.tr("Bibliotekoversikten måtte gjenopprettes fra videofilene. En kopi av den opprinnelige oversikten er bevart i bibliotekmappen.")
                 }
             }
             let known = Set(loaded.map(\.fileName))
@@ -151,7 +151,7 @@ final class LibraryStore: ObservableObject {
             }
         } catch {
             storageFailure = error
-            errorMessage = "Kunne ikke åpne biblioteket: \(error.localizedDescription)"
+            errorMessage = L10n.tr("Kunne ikke åpne biblioteket: \(error.localizedDescription)")
         }
     }
 
@@ -165,9 +165,10 @@ final class LibraryStore: ObservableObject {
         let id = UUID()
         let date = (try? fileURL.resourceValues(forKeys: [.creationDateKey]).creationDate) ?? Date()
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "nb_NO")
-        formatter.dateFormat = "d. MMMM yyyy, HH.mm"
-        let name = "Opptak \(formatter.string(from: date))"
+        formatter.locale = L10n.locale
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        let name = L10n.tr("Opptak \(formatter.string(from: date))")
         let destination = directory.appendingPathComponent("\(id.uuidString).mp4")
         // Move only a completed recording. A failed metadata write leaves this MP4 recoverable on reload.
         try await Task.detached(priority: .userInitiated) {
@@ -176,7 +177,7 @@ final class LibraryStore: ObservableObject {
         let item = RecordingItem(id: id, title: name, createdAt: date, duration: actualDuration, fileName: destination.lastPathComponent, thumbnailName: nil)
         items.insert(item, at: 0)
         do { try persist() } catch {
-            errorMessage = "Videofilen er bevart i \(destination.path), men bibliotekoversikten kunne ikke lagres: \(error.localizedDescription)"
+            errorMessage = L10n.tr("Videofilen er bevart i \(destination.path), men bibliotekoversikten kunne ikke lagres: \(error.localizedDescription)")
             throw error
         }
         await enrich(item)
@@ -211,7 +212,7 @@ final class LibraryStore: ObservableObject {
             if let trashedURL {
                 do { try fileManager.moveItem(at: trashedURL as URL, to: videoURL); items = previousItems }
                 catch {
-                    errorMessage = "Videoen ligger i papirkurven, men bibliotekoversikten kunne ikke oppdateres. Fil: \(trashedURL.path ?? item.fileName)"
+                    errorMessage = L10n.tr("Videoen ligger i papirkurven, men bibliotekoversikten kunne ikke oppdateres. Fil: \(trashedURL.path ?? item.fileName)")
                     throw error
                 }
             } else { items = previousItems }
@@ -250,6 +251,6 @@ final class LibraryStore: ObservableObject {
         guard !Task.isCancelled, let index = items.firstIndex(where: { $0.id == item.id }) else { return }
         if duration.isFinite, duration > 0 { items[index].duration = duration }
         if let thumbnail { items[index].thumbnailName = thumbnail }
-        do { try persist() } catch { errorMessage = "Videofilen er bevart, men oversikten kunne ikke lagres: \(error.localizedDescription)" }
+        do { try persist() } catch { errorMessage = L10n.tr("Videofilen er bevart, men oversikten kunne ikke lagres: \(error.localizedDescription)") }
     }
 }

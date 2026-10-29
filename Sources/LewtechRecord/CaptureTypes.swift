@@ -7,7 +7,7 @@ enum CaptureMode: String, CaseIterable, Identifiable {
     case screen, screenAndCamera, camera
     var id: String { rawValue }
     var title: String {
-        switch self { case .screen: return "Kun skjerm"; case .screenAndCamera: return "Skjerm og kamera"; case .camera: return "Kun kamera" }
+        switch self { case .screen: return L10n.tr("Kun skjerm"); case .screenAndCamera: return L10n.tr("Skjerm og kamera"); case .camera: return L10n.tr("Kun kamera") }
     }
 }
 struct DisplayChoice: Identifiable { let id: String; let title: String }
@@ -52,7 +52,7 @@ func recordingOutputSize(width: Double, height: Double) -> (Int, Int) {
 enum FacecamShape: String, CaseIterable, Identifiable {
     case circle, square
     var id: String { rawValue }
-    var title: String { self == .circle ? "Rund" : "Firkantet" }
+    var title: String { self == .circle ? L10n.tr("Rund") : L10n.tr("Firkantet") }
 }
 
 /// Same geometry for setup preview and encoded pixels. Position is the lower

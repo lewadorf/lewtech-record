@@ -1,0 +1,3 @@
+"NSCameraUsageDescription" = "Lewtech Record usa la cámara cuando eliges grabar con cámara. Los vídeos permanecen en tu Mac.";
+"NSMicrophoneUsageDescription" = "Lewtech Record usa el micrófono para grabar tu voz. El audio permanece en tu Mac.";
+"NSAudioCaptureUsageDescription" = "Lewtech Record captura audio cuando lo activas en los ajustes de grabación.";

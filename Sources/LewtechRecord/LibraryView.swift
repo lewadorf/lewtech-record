@@ -11,6 +11,7 @@ private enum LibraryPalette {
 }
 
 struct LibraryView: View {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     @ObservedObject var store: LibraryStore
     var onNew: () -> Void
     @State private var query = ""
@@ -48,7 +49,7 @@ struct LibraryView: View {
                     Text(message).font(LT.font(12)).textSelection(.enabled)
                     Spacer(minLength: 4)
                     Button { localError = nil; store.errorMessage = nil } label: { Image(systemName: "xmark") }
-                        .buttonStyle(.plain).accessibilityLabel("Lukk melding")
+                        .buttonStyle(.plain).accessibilityLabel(L10n.tr("Lukk melding"))
                 }.foregroundStyle(Color(red: 0.55, green: 0.23, blue: 0.12))
                     .padding(13).background(Color(red: 0.97, green: 0.91, blue: 0.84), in: RoundedRectangle(cornerRadius: 10))
             }
@@ -58,14 +59,14 @@ struct LibraryView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(message).font(LT.font(12)).textSelection(.enabled)
                         if FileManager.default.fileExists(atPath: store.recoveryDirectory.path) {
-                            Button("Vis gjenopprettingsmappe i Finder") { NSWorkspace.shared.open(store.recoveryDirectory) }
+                            Button(L10n.tr("Vis gjenopprettingsmappe i Finder")) { NSWorkspace.shared.open(store.recoveryDirectory) }
                                 .font(LT.font(11, weight: .semibold)).buttonStyle(.plain).underline()
                         }
                     }
                     Spacer(minLength: 4)
                     if !store.recoveringInterruptedRecordings {
                         Button { store.recoveryMessage = nil } label: { Image(systemName: "xmark") }
-                            .buttonStyle(.plain).accessibilityLabel("Lukk gjenopprettingsmelding")
+                            .buttonStyle(.plain).accessibilityLabel(L10n.tr("Lukk gjenopprettingsmelding"))
                     }
                 }.foregroundStyle(LT.ink).padding(13)
                     .background(LT.surface, in: RoundedRectangle(cornerRadius: 10))
@@ -78,8 +79,8 @@ struct LibraryView: View {
                 if filteredItems.isEmpty {
                     VStack(spacing: 12) {
                         Image(systemName: "magnifyingglass").font(LT.font(28, weight: .light))
-                        Text("Ingen opptak med dette navnet").font(LT.font(17, weight: .medium))
-                        Button("Tøm søket") { query = "" }.buttonStyle(.plain).underline()
+                        Text(L10n.tr("Ingen opptak med dette navnet")).font(LT.font(17, weight: .medium))
+                        Button(L10n.tr("Tøm søket")) { query = "" }.buttonStyle(.plain).underline()
                     }.foregroundStyle(LibraryPalette.muted).frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
                     ScrollView {
@@ -98,40 +99,40 @@ struct LibraryView: View {
         .foregroundStyle(LibraryPalette.ink)
         .sheet(item: $selectedItem) { item in
             RecordingPlayerSheet(item: store.items.first(where: { $0.id == item.id }) ?? item, url: store.url(for: item), exporting: exporting,
-                                 exportFeedback: localError ?? exportedName.map { "Eksportert: \($0)" }, exportFailed: localError != nil,
+                                 exportFeedback: localError ?? exportedName.map { L10n.tr("Eksportert: \($0)") }, exportFailed: localError != nil,
                                  onExport: { export(item) })
         }
-        .alert("Gi opptaket et nytt navn", isPresented: Binding(get: { renamingItem != nil }, set: { if !$0 { renamingItem = nil } })) {
-            TextField("Navn på opptaket", text: $newTitle)
-            Button("Avbryt", role: .cancel) { renamingItem = nil }
-            Button("Lagre") {
+        .alert(L10n.tr("Gi opptaket et nytt navn"), isPresented: Binding(get: { renamingItem != nil }, set: { if !$0 { renamingItem = nil } })) {
+            TextField(L10n.tr("Navn på opptaket"), text: $newTitle)
+            Button(L10n.tr("Avbryt"), role: .cancel) { renamingItem = nil }
+            Button(L10n.tr("Lagre")) {
                 guard let item = renamingItem else { return }
                 do { try store.rename(item, to: newTitle) } catch { localError = error.localizedDescription }
                 renamingItem = nil
             }
         }
-        .alert("Flytte opptaket til papirkurven?", isPresented: Binding(get: { trashingItem != nil }, set: { if !$0 { trashingItem = nil } })) {
-            Button("Avbryt", role: .cancel) { trashingItem = nil }
-            Button("Flytt til papirkurven", role: .destructive) {
+        .alert(L10n.tr("Flytte opptaket til papirkurven?"), isPresented: Binding(get: { trashingItem != nil }, set: { if !$0 { trashingItem = nil } })) {
+            Button(L10n.tr("Avbryt"), role: .cancel) { trashingItem = nil }
+            Button(L10n.tr("Flytt til papirkurven"), role: .destructive) {
                 guard let item = trashingItem else { return }
                 do { try store.trash(item) } catch { localError = error.localizedDescription }
                 trashingItem = nil
             }
         } message: {
-            Text("«\(trashingItem?.title ?? "Opptaket")» kan hentes tilbake fra papirkurven i Finder.")
+            Text(L10n.tr("«\(trashingItem?.title ?? L10n.tr("Opptaket"))» kan hentes tilbake fra papirkurven i Finder."))
         }
     }
 
     private var header: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading, spacing: 7) {
-                Text("DITT ARKIV").font(LT.font(10, weight: .semibold)).tracking(2).foregroundStyle(LibraryPalette.muted)
-                Text("Videobibliotek").font(LT.font(30, weight: .medium)).tracking(-0.8)
-                Text("Ideene dine, klare til å spilles av.").font(LT.font(13)).foregroundStyle(LibraryPalette.muted)
+                Text(L10n.tr("DITT ARKIV")).font(LT.font(10, weight: .semibold)).tracking(2).foregroundStyle(LibraryPalette.muted)
+                Text(L10n.tr("Videobibliotek")).font(LT.font(30, weight: .medium)).tracking(-0.8)
+                Text(L10n.tr("Ideene dine, klare til å spilles av.")).font(LT.font(13)).foregroundStyle(LibraryPalette.muted)
             }
             Spacer()
             Button(action: onNew) {
-                Label("Nytt opptak", systemImage: "plus").font(LT.font(13, weight: .semibold))
+                Label(L10n.tr("Nytt opptak"), systemImage: "plus").font(LT.font(13, weight: .semibold))
                     .padding(.horizontal, 17).padding(.vertical, 12)
                     .foregroundStyle(.white).background(LibraryPalette.ink, in: Capsule())
             }.buttonStyle(.plain)
@@ -142,18 +143,18 @@ struct LibraryView: View {
         HStack(spacing: 14) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(LibraryPalette.muted)
-                TextField("Søk i opptakene dine", text: $query).textFieldStyle(.plain).font(LT.font(13))
-                    .accessibilityLabel("Søk i videobibliotek")
+                TextField(L10n.tr("Søk i opptakene dine"), text: $query).textFieldStyle(.plain).font(LT.font(13))
+                    .accessibilityLabel(L10n.tr("Søk i videobibliotek"))
                 if !query.isEmpty {
                     Button { query = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(LibraryPalette.muted) }
-                        .buttonStyle(.plain).accessibilityLabel("Tøm søk")
+                        .buttonStyle(.plain).accessibilityLabel(L10n.tr("Tøm søk"))
                 }
             }.padding(12).background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 10))
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(LibraryPalette.line, lineWidth: 1))
                 .frame(maxWidth: 360)
             Spacer()
-            Picker("Sortering", selection: $sort) {
-                ForEach(LibrarySort.allCases) { value in Text(value.rawValue).tag(value) }
+            Picker(L10n.tr("Sortering"), selection: $sort) {
+                ForEach(LibrarySort.allCases) { value in Text(L10n.lookup(value.rawValue)).tag(value) }
             }.labelsHidden().frame(width: 150)
         }
     }
@@ -166,11 +167,11 @@ struct LibraryView: View {
                     .overlay(Image(systemName: "play.rectangle").font(LT.font(33, weight: .ultraLight)).foregroundStyle(LibraryPalette.ink))
                     .shadow(color: .black.opacity(0.04), radius: 18, y: 8)
             }.padding(.bottom, 8)
-            Text("Det starter med et opptak.").font(LT.font(24, weight: .medium)).tracking(-0.5)
-            Text("Vis en idé, forklar en prosess eller ta noen gjennom arbeidet ditt.\nVideoene lagres her, på din egen Mac.")
+            Text(L10n.tr("Det starter med et opptak.")).font(LT.font(24, weight: .medium)).tracking(-0.5)
+            Text(L10n.tr("Vis en idé, forklar en prosess eller ta noen gjennom arbeidet ditt.\nVideoene lagres her, på din egen Mac."))
                 .font(LT.font(13)).lineSpacing(5).foregroundStyle(LibraryPalette.muted).multilineTextAlignment(.center)
             Button(action: onNew) {
-                Label("Lag ditt første opptak", systemImage: "record.circle")
+                Label(L10n.tr("Lag ditt første opptak"), systemImage: "record.circle")
                     .font(LT.font(13, weight: .semibold)).padding(.horizontal, 20).padding(.vertical, 12)
                     .foregroundStyle(.white).background(LibraryPalette.ink, in: Capsule())
             }.buttonStyle(.plain).padding(.top, 6)
@@ -189,24 +190,24 @@ struct LibraryView: View {
                         .padding(.horizontal, 7).padding(.vertical, 4)
                         .foregroundStyle(.white).background(.black.opacity(0.65), in: RoundedRectangle(cornerRadius: 5)).padding(9)
                 }
-            }.buttonStyle(.plain).accessibilityLabel("Spill av \(item.title)")
+            }.buttonStyle(.plain).accessibilityLabel(L10n.tr("Spill av \(item.title)"))
             HStack(alignment: .top, spacing: 5) {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(item.title).font(LT.font(13, weight: .medium)).lineLimit(2)
-                    Text(item.createdAt.formatted(.dateTime.day().month(.abbreviated).year()))
+                    Text(item.createdAt.formatted(.dateTime.day().month(.abbreviated).year().locale(L10n.locale)))
                         .font(LT.font(11)).foregroundStyle(LibraryPalette.muted)
                 }
                 Spacer(minLength: 0)
                 Menu {
-                    Button("Spill av", systemImage: "play") { selectedItem = item }
-                    Button("Endre navn", systemImage: "pencil") { newTitle = item.title; renamingItem = item }
-                    Button("Eksporter MP4…", systemImage: "square.and.arrow.up") { export(item) }.disabled(exporting)
-                    Button("Vis i Finder", systemImage: "folder") { NSWorkspace.shared.activateFileViewerSelecting([store.url(for: item)]) }
+                    Button(L10n.tr("Spill av"), systemImage: "play") { selectedItem = item }
+                    Button(L10n.tr("Endre navn"), systemImage: "pencil") { newTitle = item.title; renamingItem = item }
+                    Button(L10n.tr("Eksporter MP4…"), systemImage: "square.and.arrow.up") { export(item) }.disabled(exporting)
+                    Button(L10n.tr("Vis i Finder"), systemImage: "folder") { NSWorkspace.shared.activateFileViewerSelecting([store.url(for: item)]) }
                     Divider()
-                    Button("Flytt til papirkurven", systemImage: "trash", role: .destructive) { trashingItem = item }
+                    Button(L10n.tr("Flytt til papirkurven"), systemImage: "trash", role: .destructive) { trashingItem = item }
                 } label: {
                     Image(systemName: "ellipsis").font(LT.font(16)).frame(width: 24, height: 20)
-                }.menuStyle(.borderlessButton).menuIndicator(.hidden).fixedSize().accessibilityLabel("Valg for \(item.title)")
+                }.menuStyle(.borderlessButton).menuIndicator(.hidden).fixedSize().accessibilityLabel(L10n.tr("Valg for \(item.title)"))
             }
         }
     }
@@ -214,12 +215,12 @@ struct LibraryView: View {
     private var footer: some View {
         HStack(spacing: 7) {
             Image(systemName: "internaldrive").font(LT.font(11))
-            Text(exporting ? "Eksporterer videofil…" : exportedName.map { "Eksportert: \($0)" } ?? "\(store.items.count) opptak · Lagret på denne Mac-en")
+            Text(exporting ? L10n.tr("Eksporterer videofil…") : exportedName.map { L10n.tr("Eksportert: \($0)") } ?? L10n.tr("\(store.items.count) opptak · Lagret på denne Mac-en"))
                 .font(LT.font(11)).lineLimit(1)
             Spacer()
-            Button("Åpne mappe") { NSWorkspace.shared.open(store.directory) }
+            Button(L10n.tr("Åpne mappe")) { NSWorkspace.shared.open(store.directory) }
                 .font(LT.font(11)).buttonStyle(.plain)
-                .accessibilityLabel("Åpne bibliotekmappen i Finder")
+                .accessibilityLabel(L10n.tr("Åpne bibliotekmappen i Finder"))
         }.foregroundStyle(LibraryPalette.muted)
     }
 
@@ -229,13 +230,13 @@ struct LibraryView: View {
         let source = store.url(for: item)
         guard FileManager.default.fileExists(atPath: source.path) else { localError = LibraryStore.LibraryError.missingRecording.localizedDescription; return }
         let panel = NSSavePanel()
-        panel.title = "Eksporter opptak"
-        panel.prompt = "Eksporter"
+        panel.title = L10n.tr("Eksporter opptak")
+        panel.prompt = L10n.tr("Eksporter")
         panel.allowedContentTypes = [.mpeg4Movie]
         panel.canCreateDirectories = true
         panel.nameFieldStringValue = item.title.replacingOccurrences(of: "/", with: "-").replacingOccurrences(of: ":", with: "-") + ".mp4"
         guard panel.runModal() == .OK, let destination = panel.url else { return }
-        guard destination.standardizedFileURL != source.standardizedFileURL else { localError = "Velg en annen plassering enn originalfilen i biblioteket."; return }
+        guard destination.standardizedFileURL != source.standardizedFileURL else { localError = L10n.tr("Velg en annen plassering enn originalfilen i biblioteket."); return }
         exporting = true
         exportedName = nil
         Task {
@@ -253,7 +254,7 @@ struct LibraryView: View {
                 }.value
                 exportedName = destination.lastPathComponent
             } catch {
-                localError = "Eksporten mislyktes: \(error.localizedDescription)"
+                localError = L10n.tr("Eksporten mislyktes: \(error.localizedDescription)")
             }
             exporting = false
         }
@@ -261,6 +262,7 @@ struct LibraryView: View {
 }
 
 private struct LibraryThumbnail: View {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     var url: URL?
     @State private var image: NSImage?
     var body: some View {
@@ -285,6 +287,7 @@ private struct LibraryThumbnail: View {
 }
 
 private struct RecordingPlayerSheet: View {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     let item: RecordingItem
     let url: URL
     var exporting: Bool
@@ -300,13 +303,13 @@ private struct RecordingPlayerSheet: View {
             HStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(item.title).font(LT.font(18, weight: .medium)).lineLimit(2)
-                    Text("\(item.createdAt.formatted(date: .abbreviated, time: .shortened)) · \(item.durationLabel)")
+                    Text("\(item.createdAt.formatted(.dateTime.locale(L10n.locale))) · \(item.durationLabel)")
                         .font(LT.font(11)).foregroundStyle(LibraryPalette.muted)
                 }
                 Spacer()
                 Button { player?.pause(); dismiss() } label: {
                     Image(systemName: "xmark").font(LT.font(13, weight: .medium)).frame(width: 28, height: 28)
-                }.buttonStyle(.plain).accessibilityLabel("Lukk avspilling").keyboardShortcut(.escape, modifiers: [])
+                }.buttonStyle(.plain).accessibilityLabel(L10n.tr("Lukk avspilling")).keyboardShortcut(.escape, modifiers: [])
             }.padding(24)
             ZStack {
                 Color.black
@@ -318,7 +321,7 @@ private struct RecordingPlayerSheet: View {
                 } else if let player {
                     NativeRecordingPlayer(player: player)
                 } else {
-                    ProgressView("Åpner video…").tint(.white).foregroundStyle(.white)
+                    ProgressView(L10n.tr("Åpner video…")).tint(.white).foregroundStyle(.white)
                 }
             }.frame(minHeight: 340, maxHeight: .infinity)
             HStack {
@@ -326,11 +329,11 @@ private struct RecordingPlayerSheet: View {
                     Text(exportFeedback).font(LT.font(11)).foregroundStyle(exportFailed ? LT.accent : LibraryPalette.muted)
                         .textSelection(.enabled).lineLimit(3).frame(maxWidth: 400, alignment: .leading)
                 } else {
-                    Label("Lagret lokalt", systemImage: "internaldrive").font(LT.font(12)).foregroundStyle(LibraryPalette.muted)
+                    Label(L10n.tr("Lagret lokalt"), systemImage: "internaldrive").font(LT.font(12)).foregroundStyle(LibraryPalette.muted)
                 }
                 Spacer()
-                Button("Vis i Finder") { NSWorkspace.shared.activateFileViewerSelecting([url]) }
-                Button(exporting ? "Eksporterer…" : "Eksporter MP4…", action: onExport).disabled(exporting || failure != nil)
+                Button(L10n.tr("Vis i Finder")) { NSWorkspace.shared.activateFileViewerSelecting([url]) }
+                Button(exporting ? L10n.tr("Eksporterer…") : L10n.tr("Eksporter MP4…"), action: onExport).disabled(exporting || failure != nil)
             }.padding(20)
         }
         .frame(minWidth: 720, idealWidth: 860, minHeight: 510, idealHeight: 620)

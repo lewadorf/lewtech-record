@@ -1,0 +1,3 @@
+"NSCameraUsageDescription" = "Lewtech Record bruker kameraet ditt når du velger opptak med kamera. Videoen lagres bare på Mac-en din.";
+"NSMicrophoneUsageDescription" = "Lewtech Record bruker mikrofonen til stemmen din i videoopptak. Lyden lagres bare på Mac-en din.";
+"NSAudioCaptureUsageDescription" = "Lewtech Record tar opp lyd når du har valgt det i opptaksinnstillingene.";

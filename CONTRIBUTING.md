@@ -27,3 +27,7 @@ Be constructive and respectful in issues and reviews. See [SUPPORT.md](SUPPORT.m
 ## License
 
 Contributions intentionally submitted for inclusion in this project are provided under Apache-2.0, unless explicitly stated otherwise, as described in Section 5 of [LICENSE](LICENSE). Preserve applicable attribution and third-party notices.
+
+## Translations
+
+Norwegian Bokmål, English, German and Spanish are supported. See [Localization](docs/LOCALIZATION.md) for resource locations, placeholders and validation. Update all four translations when changing user-facing text.

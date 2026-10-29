@@ -15,5 +15,6 @@
 <key>NSMicrophoneUsageDescription</key><string>Lewtech Record bruker mikrofonen til stemmen din i videoopptak. Lyden lagres bare på Mac-en din.</string>
 <key>NSAudioCaptureUsageDescription</key><string>Lewtech Record tar opp lyd når du har valgt det i opptaksinnstillingene.</string>
 <key>NSPrincipalClass</key><string>NSApplication</string>
-<key>CFBundleDevelopmentRegion</key><string>nb</string>
+<key>CFBundleDevelopmentRegion</key><string>en</string>
+<key>CFBundleLocalizations</key><array><string>nb</string><string>en</string><string>de</string><string>es</string></array>
 </dict></plist>

@@ -64,7 +64,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
 
     private func beginPreview(_ generation: UUID) async {
         let preview = LivePreview(); livePreview = preview
-        previewMessage = "Starter forhåndsvisning …"
+        previewMessage = L10n.tr("Starter forhåndsvisning …")
         statusMessage = nil; needsScreenAccess = false
         if mode == .camera { outputDimensions = CGSize(width: 1920, height: 1080) }
         func current() -> Bool { previewGeneration == generation && state == .idle && !Task.isCancelled }
@@ -93,18 +93,18 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
                 try await preview.startScreen(filter: filter, size: size)
             } catch {
                 needsScreenAccess = true
-                failures.append("Skjermbildet er ikke tilgjengelig. Åpne skjermtilgang og slå på Lewtech Record. Hvis den allerede er på, avslutt og åpne appen igjen etter at du har gitt tilgang. macOS: \(error.localizedDescription)")
+                failures.append(L10n.tr("Skjermbildet er ikke tilgjengelig. Åpne skjermtilgang og slå på Lewtech Record. Hvis den allerede er på, avslutt og åpne appen igjen etter at du har gitt tilgang. macOS: \(error.localizedDescription)"))
             }
         }
         guard current() else { return }
         var video: String?; var audio: String?
         if mode != .screen {
-            do { try await requestPermission(.video, label: "kamera"); video = cameraID }
+            do { try await requestPermission(.video, label: L10n.tr("kamera")); video = cameraID }
             catch { failures.append(error.localizedDescription) }
         }
         guard current() else { return }
         if microphoneEnabled {
-            do { try await requestPermission(.audio, label: "mikrofon"); audio = microphoneID }
+            do { try await requestPermission(.audio, label: L10n.tr("mikrofon")); audio = microphoneID }
             catch { failures.append(error.localizedDescription) }
         }
         guard current() else { return }
@@ -115,14 +115,14 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
     }
 
     private func screenSelection() throws -> (SCContentFilter, (Int, Int)) {
-        guard let content else { throw CaptureFailure.message("Ingen skjermkilde er tilgjengelig.") }
+        guard let content else { throw CaptureFailure.message(L10n.tr("Ingen skjermkilde er tilgjengelig.")) }
         if !selectedWindowID.isEmpty {
-            guard let window = content.windows.first(where: { String($0.windowID) == selectedWindowID }) else { throw CaptureFailure.message("Vinduet er lukket. Velg et nytt vindu.") }
+            guard let window = content.windows.first(where: { String($0.windowID) == selectedWindowID }) else { throw CaptureFailure.message(L10n.tr("Vinduet er lukket. Velg et nytt vindu.")) }
             let size = recordingOutputSize(width: window.frame.width * 2, height: window.frame.height * 2)
             outputDimensions = CGSize(width: size.0, height: size.1)
             return (SCContentFilter(desktopIndependentWindow: window), size)
         }
-        guard let display = content.displays.first(where: { String($0.displayID) == selectedDisplayID }) else { throw CaptureFailure.message("Velg en skjerm før du starter.") }
+        guard let display = content.displays.first(where: { String($0.displayID) == selectedDisplayID }) else { throw CaptureFailure.message(L10n.tr("Velg en skjerm før du starter.")) }
         let ownApps = content.applications.filter { $0.processID == ProcessInfo.processInfo.processIdentifier }
         let size = recordingOutputSize(width: Double(display.width) * 2, height: Double(display.height) * 2)
         outputDimensions = CGSize(width: size.0, height: size.1)
@@ -149,13 +149,13 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
             Task { @MainActor in
                 guard let self, self.state == .recording || self.state == .paused || self.state == .preparing else { return }
                 if device.uniqueID == self.cameraID && self.mode != .screen || device.uniqueID == self.microphoneID && self.microphoneEnabled {
-                    self.handleSourceFailure("\(device.localizedName) ble koblet fra. Opptaket avsluttes.")
+                    self.handleSourceFailure(L10n.tr("\(device.localizedName) ble koblet fra. Opptaket avsluttes."))
                 }
             }
         })
         observations.append(NotificationCenter.default.addObserver(forName: AVCaptureSession.runtimeErrorNotification, object: nil, queue: .main) { [weak self] note in
             let sourceSession = note.object as? AVCaptureSession
-            let description = (note.userInfo?[AVCaptureSessionErrorKey] as? NSError)?.localizedDescription ?? "Kameraet eller mikrofonen ble avbrutt."
+            let description = (note.userInfo?[AVCaptureSessionErrorKey] as? NSError)?.localizedDescription ?? L10n.tr("Kameraet eller mikrofonen ble avbrutt.")
             Task { @MainActor in
                 guard let self, let sourceSession, self.session === sourceSession else { return }
                 self.handleSourceFailure(description)
@@ -163,7 +163,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
         })
         for name in [NSWorkspace.screensDidSleepNotification, NSWorkspace.sessionDidResignActiveNotification] {
             observations.append(NSWorkspace.shared.notificationCenter.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
-                Task { @MainActor in self?.handleSourceFailure("Mac-en gikk i hvile eller byttet brukerøkt. Opptaket avsluttes og lagres.") }
+                Task { @MainActor in self?.handleSourceFailure(L10n.tr("Mac-en gikk i hvile eller byttet brukerøkt. Opptaket avsluttes og lagres.")) }
             })
         }
     }
@@ -195,18 +195,18 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
         self.content = content
         displays = content.displays.map { display in
             let screen = NSScreen.screens.first { ($0.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber)?.uint32Value == display.displayID }
-            return DisplayChoice(id: String(display.displayID), title: screen?.localizedName ?? "Skjerm \(display.displayID)")
+            return DisplayChoice(id: String(display.displayID), title: screen?.localizedName ?? L10n.tr("Skjerm \(display.displayID)"))
         }
         windows = content.windows.filter { $0.owningApplication?.processID != ProcessInfo.processInfo.processIdentifier && $0.windowLayer == 0 && !($0.title ?? "").isEmpty && $0.frame.width > 100 && $0.frame.height > 100 }.map {
-            WindowChoice(id: String($0.windowID), title: "\($0.owningApplication?.applicationName ?? "App") — \($0.title ?? "Vindu")")
+            WindowChoice(id: String($0.windowID), title: "\($0.owningApplication?.applicationName ?? L10n.tr("App")) — \($0.title ?? L10n.tr("Vindu"))")
         }.sorted { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending }
         if selectedDisplayID.isEmpty { selectedDisplayID = displays.first?.id ?? "" }
         else if !displays.contains(where: { $0.id == selectedDisplayID }) {
-            displays.append(DisplayChoice(id: selectedDisplayID, title: "Skjermen er frakoblet – velg en ny"))
+            displays.append(DisplayChoice(id: selectedDisplayID, title: L10n.tr("Skjermen er frakoblet – velg en ny")))
         }
         // Never silently expand a closed-window selection to the entire display.
         if !selectedWindowID.isEmpty && !windows.contains(where: { $0.id == selectedWindowID }) {
-            windows.append(WindowChoice(id: selectedWindowID, title: "Vinduet er lukket – velg en ny kilde"))
+            windows.append(WindowChoice(id: selectedWindowID, title: L10n.tr("Vinduet er lukket – velg en ny kilde")))
         }
     }
 
@@ -218,19 +218,19 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
         guard preparationID == operation, state == .preparing else { return }
         do {
             if mode != .camera {
-                statusMessage = "Henter tilgjengelige skjermer og vinduer …"
+                statusMessage = L10n.tr("Henter tilgjengelige skjermer og vinduer …")
                 try await updateScreenSources()
                 guard preparationID == operation, state == .preparing else { return }
             }
-            if mode != .screen { statusMessage = "Kontrollerer kameratilgang …"; try await requestPermission(.video, label: "kamera") }
+            if mode != .screen { statusMessage = L10n.tr("Kontrollerer kameratilgang …"); try await requestPermission(.video, label: L10n.tr("kamera")) }
             guard preparationID == operation, state == .preparing else { return }
-            if microphoneEnabled { statusMessage = "Kontrollerer mikrofontilgang …"; try await requestPermission(.audio, label: "mikrofon") }
+            if microphoneEnabled { statusMessage = L10n.tr("Kontrollerer mikrofontilgang …"); try await requestPermission(.audio, label: L10n.tr("mikrofon")) }
             try Task.checkCancellation()
             guard preparationID == operation, state == .preparing else { return }
             let tempDirectory = recordingDirectory
             try FileManager.default.createDirectory(at: tempDirectory, withIntermediateDirectories: true)
             if let available = try tempDirectory.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey]).volumeAvailableCapacityForImportantUsage,
-               available < 500_000_000 { throw CaptureFailure.message("Du trenger minst 500 MB ledig plass for å starte opptaket.") }
+               available < 500_000_000 { throw CaptureFailure.message(L10n.tr("Du trenger minst 500 MB ledig plass for å starte opptaket.")) }
             let url = tempDirectory.appendingPathComponent("\(UUID().uuidString).mp4")
             var filter: SCContentFilter?
             var size = (1920, 1080)
@@ -241,7 +241,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
             let pipeline = try RecordingPipeline(url: url, width: size.0, height: size.1, mode: mode, microphone: microphoneEnabled)
             self.pipeline = pipeline
             pipeline.setFacecam(shape: bubbleShape, scale: bubbleScale, position: bubblePosition)
-            statusMessage = "Klargjør kamera og mikrofon …"
+            statusMessage = L10n.tr("Klargjør kamera og mikrofon …")
             pipeline.onLevel = { [weak self] value in Task { @MainActor in self?.audioLevel = value } }
             pipeline.onCameraPreview = { [weak self, weak pipeline] image in
                 Task { @MainActor in
@@ -286,7 +286,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
             if let preparationFailure { throw CaptureFailure.message(preparationFailure) }
             guard preparationID == operation, state == .preparing else { return }
             countdown = nil; statusMessage = nil; pipeline.begin(); state = .recording
-            recordingActivity = ProcessInfo.processInfo.beginActivity(options: [.userInitiated, .idleSystemSleepDisabled], reason: "Lagrer et skjerm- eller kameraopptak")
+            recordingActivity = ProcessInfo.processInfo.beginActivity(options: [.userInitiated, .idleSystemSleepDisabled], reason: L10n.tr("Lagrer et skjerm- eller kameraopptak"))
             onRecordingStarted?()
             timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
                 Task { @MainActor in guard let self else { return }; self.elapsed = self.pipeline?.duration ?? 0 }
@@ -295,7 +295,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
             Task { @MainActor [weak self, weak pipeline] in
                 try? await Task.sleep(nanoseconds: 5_000_000_000)
                 guard let self, self.state == .recording, let pipeline, !pipeline.hasFrames else { return }
-                self.errorMessage = "Ingen bilder mottas fra valgt kilde. Kontroller kamera og skjermtilgang."
+                self.errorMessage = L10n.tr("Ingen bilder mottas fra valgt kilde. Kontroller kamera og skjermtilgang.")
                 self.onUnexpectedStop?()
             }
         } catch {
@@ -312,7 +312,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
         let status = AVCaptureDevice.authorizationStatus(for: mediaType)
         if status == .authorized { return }
         if status == .notDetermined, await AVCaptureDevice.requestAccess(for: mediaType) { return }
-        throw CaptureFailure.message("Gi Lewtech Record tilgang til \(label) i Systeminnstillinger → Personvern og sikkerhet, og prøv igjen.")
+        throw CaptureFailure.message(L10n.tr("Gi Lewtech Record tilgang til \(label) i Systeminnstillinger → Personvern og sikkerhet, og prøv igjen."))
     }
 
     private func prepareDevices(_ pipeline: RecordingPipeline) async throws {
@@ -320,32 +320,32 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
         let captureSession = AVCaptureSession()
         captureSession.beginConfiguration(); captureSession.sessionPreset = .high
         if mode != .screen {
-            guard let device = AVCaptureDevice(uniqueID: cameraID) else { throw CaptureFailure.message("Velg et tilgjengelig kamera, eller bytt til Kun skjerm.") }
+            guard let device = AVCaptureDevice(uniqueID: cameraID) else { throw CaptureFailure.message(L10n.tr("Velg et tilgjengelig kamera, eller bytt til Kun skjerm.")) }
             let input = try AVCaptureDeviceInput(device: device)
-            guard captureSession.canAddInput(input) else { throw CaptureFailure.message("Kameraet kan ikke åpnes. Kontroller om en annen app bruker det.") }
+            guard captureSession.canAddInput(input) else { throw CaptureFailure.message(L10n.tr("Kameraet kan ikke åpnes. Kontroller om en annen app bruker det.")) }
             captureSession.addInput(input)
             let output = AVCaptureVideoDataOutput()
             output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
             output.alwaysDiscardsLateVideoFrames = true
             output.setSampleBufferDelegate(pipeline, queue: pipeline.queue)
-            guard captureSession.canAddOutput(output) else { throw CaptureFailure.message("Kamerabildet kunne ikke klargjøres.") }
+            guard captureSession.canAddOutput(output) else { throw CaptureFailure.message(L10n.tr("Kamerabildet kunne ikke klargjøres.")) }
             captureSession.addOutput(output)
         }
         if microphoneEnabled {
-            guard let device = AVCaptureDevice(uniqueID: microphoneID) else { throw CaptureFailure.message("Velg en tilgjengelig mikrofon, eller slå av mikrofonen.") }
+            guard let device = AVCaptureDevice(uniqueID: microphoneID) else { throw CaptureFailure.message(L10n.tr("Velg en tilgjengelig mikrofon, eller slå av mikrofonen.")) }
             let input = try AVCaptureDeviceInput(device: device)
-            guard captureSession.canAddInput(input) else { throw CaptureFailure.message("Mikrofonen kunne ikke åpnes.") }
+            guard captureSession.canAddInput(input) else { throw CaptureFailure.message(L10n.tr("Mikrofonen kunne ikke åpnes.")) }
             captureSession.addInput(input)
             let output = AVCaptureAudioDataOutput()
             output.setSampleBufferDelegate(pipeline, queue: pipeline.queue)
-            guard captureSession.canAddOutput(output) else { throw CaptureFailure.message("Mikrofonsporet kunne ikke klargjøres.") }
+            guard captureSession.canAddOutput(output) else { throw CaptureFailure.message(L10n.tr("Mikrofonsporet kunne ikke klargjøres.")) }
             captureSession.addOutput(output)
         }
         captureSession.commitConfiguration()
         session = captureSession
         await withCheckedContinuation { continuation in sessionQueue.async { captureSession.startRunning(); continuation.resume() } }
         pipeline.setAudioClock(captureSession.synchronizationClock)
-        guard captureSession.isRunning else { throw CaptureFailure.message("Kamera eller mikrofon kunne ikke startes.") }
+        guard captureSession.isRunning else { throw CaptureFailure.message(L10n.tr("Kamera eller mikrofon kunne ikke startes.")) }
     }
 
     func pause() { guard state == .recording else { return }; pipeline?.pause(); state = .paused }
@@ -374,7 +374,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
         preparationID = UUID()
         state = .finishing
         await cleanUp(discard: true)
-        state = .idle; elapsed = 0; countdown = nil; statusMessage = "Opptaket ble forkastet."
+        state = .idle; elapsed = 0; countdown = nil; statusMessage = L10n.tr("Opptaket ble forkastet.")
     }
     private func cleanUp(discard: Bool) async {
         timer?.invalidate(); timer = nil
@@ -398,7 +398,7 @@ final class CaptureController: NSObject, ObservableObject, SCStreamDelegate {
     nonisolated func stream(_ stream: SCStream, didStopWithError error: Error) {
         Task { @MainActor in
             guard self.stream === stream else { return }
-            self.handleSourceFailure("Skjermopptaket ble avbrutt: \(error.localizedDescription)")
+            self.handleSourceFailure(L10n.tr("Skjermopptaket ble avbrutt: \(error.localizedDescription)"))
         }
     }
     private func handleSourceFailure(_ message: String) {

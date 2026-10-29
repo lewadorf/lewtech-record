@@ -36,12 +36,12 @@ final class AppModel: ObservableObject {
         do {
             if let result = try await capture.stop() {
                 try await library.addRecording(fileURL: result.url, duration: result.duration)
-                capture.statusMessage = "Opptaket er lagret i videobiblioteket."
+                capture.statusMessage = L10n.tr("Opptaket er lagret i videobiblioteket.")
                 showMainWindow()
             }
         } catch {
             capture.errorMessage = error.localizedDescription
-            library.errorMessage = library.errorMessage ?? "Opptaket kunne ikke legges til: \(error.localizedDescription) Eventuelle videodata ligger i .incomplete-mappen i biblioteket."
+            library.errorMessage = library.errorMessage ?? L10n.tr("Opptaket kunne ikke legges til: \(error.localizedDescription) Eventuelle videodata ligger i .incomplete-mappen i biblioteket.")
             showMainWindow()
         }
     }
@@ -62,11 +62,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if model.saving || model.capture.state == .finishing { return .terminateCancel }
         guard model.capture.state != .idle else { return .terminateNow }
         let alert = NSAlert()
-        alert.messageText = "Et opptak pågår"
-        alert.informativeText = "Lagre opptaket før du avslutter Lewtech Record?"
-        alert.addButton(withTitle: "Lagre og avslutt")
-        alert.addButton(withTitle: "Fortsett")
-        alert.addButton(withTitle: "Forkast og avslutt")
+        alert.messageText = L10n.tr("Et opptak pågår")
+        alert.informativeText = L10n.tr("Lagre opptaket før du avslutter Lewtech Record?")
+        alert.addButton(withTitle: L10n.tr("Lagre og avslutt"))
+        alert.addButton(withTitle: L10n.tr("Fortsett"))
+        alert.addButton(withTitle: L10n.tr("Forkast og avslutt"))
         let answer = alert.runModal()
         if answer == .alertSecondButtonReturn { return .terminateCancel }
         Task { @MainActor in

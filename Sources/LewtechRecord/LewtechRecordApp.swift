@@ -2,26 +2,28 @@ import SwiftUI
 
 @main
 struct LewtechRecordApp: App {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     @StateObject private var model = AppModel()
 
     var body: some Scene {
         Window("Lewtech Record", id: "main") {
             RootView(model: model)
+                .environment(\.locale, languageSettings.locale)
                 .task { delegate.model = model; await RecordingDiagnostics.runIfRequested(model: model) }
         }
         .defaultSize(width: 1180, height: 780)
         .windowStyle(.hiddenTitleBar)
         .commands {
-            CommandMenu("Opptak") {
-                Button("Start opptak") { Task { await model.record() } }
+            CommandMenu(L10n.tr("Opptak")) {
+                Button(L10n.tr("Start opptak")) { Task { await model.record() } }
                     .keyboardShortcut("r", modifiers: [.command, .shift])
                     .disabled(model.capture.state != .idle || model.saving)
-                Button("Pause / fortsett") {
+                Button(L10n.tr("Pause / fortsett")) {
                     if model.capture.state == .recording { model.capture.pause() }
                     else { model.capture.resume() }
                 }.keyboardShortcut("p", modifiers: [.command, .shift])
-                Button("Stopp og lagre") { Task { await model.finish() } }
+                Button(L10n.tr("Stopp og lagre")) { Task { await model.finish() } }
                     .keyboardShortcut("s", modifiers: [.command, .shift])
             }
         }
@@ -32,19 +34,20 @@ struct LewtechRecordApp: App {
 }
 
 private struct MenuBarControls: View {
+    @ObservedObject private var languageSettings = LanguageSettings.shared
     @ObservedObject var model: AppModel
     @ObservedObject var capture: CaptureController
     var body: some View {
-        Button("Åpne Lewtech Record") { model.showMainWindow() }
+        Button(L10n.tr("Åpne Lewtech Record")) { model.showMainWindow() }
         Divider()
         if capture.state == .recording || capture.state == .paused {
-            Text("\(capture.state == .paused ? "Pause" : "Tar opp") · \(Int(capture.elapsed) / 60):\(String(format: "%02d", Int(capture.elapsed) % 60))")
-            Button(capture.state == .paused ? "Fortsett" : "Pause") { capture.state == .paused ? capture.resume() : capture.pause() }
-            Button("Stopp og lagre") { Task { await model.finish() } }
+            Text("\(capture.state == .paused ? L10n.tr("Pause") : L10n.tr("Tar opp")) · \(Int(capture.elapsed) / 60):\(String(format: "%02d", Int(capture.elapsed) % 60))")
+            Button(capture.state == .paused ? L10n.tr("Fortsett") : L10n.tr("Pause")) { capture.state == .paused ? capture.resume() : capture.pause() }
+            Button(L10n.tr("Stopp og lagre")) { Task { await model.finish() } }
         } else if capture.state == .idle {
-            Button("Start opptak") { Task { await model.record() } }.disabled(model.saving)
-        } else { Text(capture.state == .finishing ? "Lagrer …" : "Klargjør …") }
+            Button(L10n.tr("Start opptak")) { Task { await model.record() } }.disabled(model.saving)
+        } else { Text(capture.state == .finishing ? L10n.tr("Lagrer …") : L10n.tr("Klargjør …")) }
         Divider()
-        Button("Avslutt Lewtech Record") { NSApp.terminate(nil) }
+        Button(L10n.tr("Avslutt Lewtech Record")) { NSApp.terminate(nil) }
     }
 }

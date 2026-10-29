@@ -77,27 +77,27 @@ final class LivePreview: NSObject, SCStreamDelegate {
                     session.beginConfiguration(); session.sessionPreset = .high
                     do {
                         if let cameraID {
-                            guard let device = AVCaptureDevice(uniqueID: cameraID) else { throw CaptureFailure.message("Valgt kamera er ikke tilgjengelig.") }
+                            guard let device = AVCaptureDevice(uniqueID: cameraID) else { throw CaptureFailure.message(L10n.tr("Valgt kamera er ikke tilgjengelig.")) }
                             let input = try AVCaptureDeviceInput(device: device)
                             let output = AVCaptureVideoDataOutput()
                             output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
                             output.alwaysDiscardsLateVideoFrames = true
                             output.setSampleBufferDelegate(frames, queue: frames.queue)
-                            guard session.canAddInput(input), session.canAddOutput(output) else { throw CaptureFailure.message("Kameraet kunne ikke åpnes.") }
+                            guard session.canAddInput(input), session.canAddOutput(output) else { throw CaptureFailure.message(L10n.tr("Kameraet kunne ikke åpnes.")) }
                             session.addInput(input); session.addOutput(output)
                         }
                         if let microphoneID {
-                            guard let device = AVCaptureDevice(uniqueID: microphoneID) else { throw CaptureFailure.message("Valgt mikrofon er ikke tilgjengelig.") }
+                            guard let device = AVCaptureDevice(uniqueID: microphoneID) else { throw CaptureFailure.message(L10n.tr("Valgt mikrofon er ikke tilgjengelig.")) }
                             let input = try AVCaptureDeviceInput(device: device)
                             let output = AVCaptureAudioDataOutput()
                             output.setSampleBufferDelegate(frames, queue: frames.queue)
-                            guard session.canAddInput(input), session.canAddOutput(output) else { throw CaptureFailure.message("Mikrofonen kunne ikke åpnes.") }
+                            guard session.canAddInput(input), session.canAddOutput(output) else { throw CaptureFailure.message(L10n.tr("Mikrofonen kunne ikke åpnes.")) }
                             session.addInput(input); session.addOutput(output)
                         }
                         session.commitConfiguration()
                     } catch { session.commitConfiguration(); throw error }
                     session.startRunning()
-                    guard session.isRunning else { throw CaptureFailure.message("Forhåndsvisning av kamera/mikrofon kunne ikke startes.") }
+                    guard session.isRunning else { throw CaptureFailure.message(L10n.tr("Forhåndsvisning av kamera/mikrofon kunne ikke startes.")) }
                     continuation.resume()
                 } catch { continuation.resume(throwing: error) }
             }
@@ -116,7 +116,7 @@ final class LivePreview: NSObject, SCStreamDelegate {
     nonisolated func stream(_ stream: SCStream, didStopWithError error: Error) {
         Task { @MainActor in
             guard self.stream === stream else { return }
-            self.onFailure?("Forhåndsvisningen ble avbrutt: \(error.localizedDescription)")
+            self.onFailure?(L10n.tr("Forhåndsvisningen ble avbrutt: \(error.localizedDescription)"))
         }
     }
 }

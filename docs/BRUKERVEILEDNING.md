@@ -84,3 +84,7 @@ tccutil reset ScreenCapture no.lewtech.record
 Åpne den installerte appen fra Finder, gå til Opptaksstudio, og godkjenn skjermtilgang på nytt. Dette sletter ingen opptak. En stabil Apple Development/Developer ID-signatur bør brukes for oppdateringer som skal bevare tillatelser mellom bygg.
 
 </details>
+
+## Språkvalg
+
+Appen støtter norsk bokmål, engelsk, tysk og spansk. Første gang følger den Mac-ens foretrukne språk, med engelsk som reserve. Velg **Innstillinger → Språk** for å overstyre dette eller velg **Følg Mac-ens språk**. Valget huskes. Eksisterende opptakstitler endres ikke, og macOS-dialoger følger systemets språk. Språkvalget finnes i nye bygg fra gjeldende kildekode; eldre forhåndsversjoner er uendret.

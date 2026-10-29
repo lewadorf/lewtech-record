@@ -1,0 +1,1418 @@
+{
+  " · med kameraboble": {
+    "nb": " · med kameraboble",
+    "en": " · with facecam",
+    "de": " · mit Kamerabild",
+    "es": " · con cámara superpuesta"
+  },
+  "ARBEIDSOMRÅDE": {
+    "nb": "ARBEIDSOMRÅDE",
+    "en": "WORKSPACE",
+    "de": "ARBEITSBEREICH",
+    "es": "ESPACIO DE TRABAJO"
+  },
+  "App": {
+    "nb": "App",
+    "en": "App",
+    "de": "App",
+    "es": "Aplicación"
+  },
+  "Avbryt": {
+    "nb": "Avbryt",
+    "en": "Cancel",
+    "de": "Abbrechen",
+    "es": "Cancelar"
+  },
+  "Avslutt Lewtech Record": {
+    "nb": "Avslutt Lewtech Record",
+    "en": "Quit Lewtech Record",
+    "de": "Lewtech Record beenden",
+    "es": "Salir de Lewtech Record"
+  },
+  "Bare på denne Mac-en": {
+    "nb": "Bare på denne Mac-en",
+    "en": "Only on this Mac",
+    "de": "Nur auf diesem Mac",
+    "es": "Solo en este Mac"
+  },
+  "Begge": {
+    "nb": "Begge",
+    "en": "Both",
+    "de": "Beides",
+    "es": "Ambos"
+  },
+  "Biblioteket er opprettet av en nyere versjon av Lewtech Record.": {
+    "nb": "Biblioteket er opprettet av en nyere versjon av Lewtech Record.",
+    "en": "The library was created by a newer version of Lewtech Record.",
+    "de": "Die Mediathek wurde mit einer neueren Version von Lewtech Record erstellt.",
+    "es": "La biblioteca se creó con una versión más reciente de Lewtech Record."
+  },
+  "Bibliotekets metadata inneholder en ugyldig filreferanse.": {
+    "nb": "Bibliotekets metadata inneholder en ugyldig filreferanse.",
+    "en": "The library metadata contains an invalid file reference.",
+    "de": "Die Metadaten der Mediathek enthalten einen ungültigen Dateiverweis.",
+    "es": "Los metadatos de la biblioteca contienen una referencia de archivo no válida."
+  },
+  "Bibliotekoversikten måtte gjenopprettes fra videofilene. En kopi av den opprinnelige oversikten er bevart i bibliotekmappen.": {
+    "nb": "Bibliotekoversikten måtte gjenopprettes fra videofilene. En kopi av den opprinnelige oversikten er bevart i bibliotekmappen.",
+    "en": "The library index was rebuilt from the video files. A copy of the original index is saved in the library folder.",
+    "de": "Der Mediatheksindex wurde aus den Videodateien wiederhergestellt. Eine Kopie des ursprünglichen Index liegt im Mediatheksordner.",
+    "es": "El índice de la biblioteca se reconstruyó a partir de los vídeos. Se conserva una copia del índice original en la carpeta de la biblioteca."
+  },
+  "Bruk mikrofon": {
+    "nb": "Bruk mikrofon",
+    "en": "Use microphone",
+    "de": "Mikrofon verwenden",
+    "es": "Usar micrófono"
+  },
+  "DIREKTE · IKKE OPPTAK": {
+    "nb": "DIREKTE · IKKE OPPTAK",
+    "en": "LIVE · NOT RECORDING",
+    "de": "LIVE · KEINE AUFNAHME",
+    "es": "EN DIRECTO · SIN GRABAR"
+  },
+  "DITT ARBEIDSOMRÅDE": {
+    "nb": "DITT ARBEIDSOMRÅDE",
+    "en": "YOUR WORKSPACE",
+    "de": "DEIN ARBEITSBEREICH",
+    "es": "TU ESPACIO DE TRABAJO"
+  },
+  "DITT ARKIV": {
+    "nb": "DITT ARKIV",
+    "en": "YOUR LIBRARY",
+    "de": "DEINE MEDIATHEK",
+    "es": "TU BIBLIOTECA"
+  },
+  "De tidligere avbrutte opptakene er ikke lenger i gjenopprettingsmappen.": {
+    "nb": "De tidligere avbrutte opptakene er ikke lenger i gjenopprettingsmappen.",
+    "en": "The interrupted recordings are no longer in the recovery folder.",
+    "de": "Die unterbrochenen Aufnahmen befinden sich nicht mehr im Wiederherstellungsordner.",
+    "es": "Las grabaciones interrumpidas ya no están en la carpeta de recuperación."
+  },
+  "Det er lite ledig diskplass. Opptaket avsluttes og lagres.": {
+    "nb": "Det er lite ledig diskplass. Opptaket avsluttes og lagres.",
+    "en": "Disk space is running low. The recording will stop and be saved.",
+    "de": "Der Speicherplatz wird knapp. Die Aufnahme wird beendet und gespeichert.",
+    "es": "Queda poco espacio en disco. La grabación se detendrá y se guardará."
+  },
+  "Det starter med et opptak.": {
+    "nb": "Det starter med et opptak.",
+    "en": "It starts with a recording.",
+    "de": "Alles beginnt mit einer Aufnahme.",
+    "es": "Todo empieza con una grabación."
+  },
+  "Dette opptaket blir ikke lagt til i biblioteket.": {
+    "nb": "Dette opptaket blir ikke lagt til i biblioteket.",
+    "en": "This recording will not be added to the library.",
+    "de": "Diese Aufnahme wird nicht zur Mediathek hinzugefügt.",
+    "es": "Esta grabación no se añadirá a la biblioteca."
+  },
+  "Digitalt, med omtanke.": {
+    "nb": "Digitalt, med omtanke.",
+    "en": "Digital, with care.",
+    "de": "Digital, mit Bedacht.",
+    "es": "Digital, con cuidado."
+  },
+  "Din skjerm": {
+    "nb": "Din skjerm",
+    "en": "Your screen",
+    "de": "Dein Bildschirm",
+    "es": "Tu pantalla"
+  },
+  "Ditt kamera": {
+    "nb": "Ditt kamera",
+    "en": "Your camera",
+    "de": "Deine Kamera",
+    "es": "Tu cámara"
+  },
+  "Dra bildet for å flytte. Dra hjørnehåndtaket for å endre størrelsen.": {
+    "nb": "Dra bildet for å flytte. Dra hjørnehåndtaket for å endre størrelsen.",
+    "en": "Drag the image to move it. Drag the corner handle to resize.",
+    "de": "Ziehe das Bild zum Verschieben und den Eckgriff zum Ändern der Größe.",
+    "es": "Arrastra la imagen para moverla y el tirador de la esquina para cambiar su tamaño."
+  },
+  "Dra for å endre størrelsen på facecam": {
+    "nb": "Dra for å endre størrelsen på facecam",
+    "en": "Drag to resize facecam",
+    "de": "Ziehen, um das Kamerabild zu vergrößern oder zu verkleinern",
+    "es": "Arrastra para cambiar el tamaño de la cámara"
+  },
+  "Dra for å flytte facecam": {
+    "nb": "Dra for å flytte facecam",
+    "en": "Drag to move facecam",
+    "de": "Ziehen, um das Kamerabild zu verschieben",
+    "es": "Arrastra para mover la cámara"
+  },
+  "Dra hjørnet for å endre størrelse": {
+    "nb": "Dra hjørnet for å endre størrelse",
+    "en": "Drag the corner to resize",
+    "de": "Ecke ziehen, um die Größe zu ändern",
+    "es": "Arrastra la esquina para cambiar el tamaño"
+  },
+  "Du har ordet.": {
+    "nb": "Du har ordet.",
+    "en": "Over to you.",
+    "de": "Du hast das Wort.",
+    "es": "Tienes la palabra."
+  },
+  "Du trenger minst 500 MB ledig plass for å starte opptaket.": {
+    "nb": "Du trenger minst 500 MB ledig plass for å starte opptaket.",
+    "en": "You need at least 500 MB of free space to start recording.",
+    "de": "Du brauchst mindestens 500 MB freien Speicherplatz, um die Aufnahme zu starten.",
+    "es": "Necesitas al menos 500 MB libres para iniciar la grabación."
+  },
+  "Eksporten mislyktes: {0}": {
+    "nb": "Eksporten mislyktes: {0}",
+    "en": "Export failed: {0}",
+    "de": "Export fehlgeschlagen: {0}",
+    "es": "Error al exportar: {0}"
+  },
+  "Eksporter": {
+    "nb": "Eksporter",
+    "en": "Export",
+    "de": "Exportieren",
+    "es": "Exportar"
+  },
+  "Eksporter MP4…": {
+    "nb": "Eksporter MP4…",
+    "en": "Export MP4…",
+    "de": "MP4 exportieren…",
+    "es": "Exportar MP4…"
+  },
+  "Eksporter opptak": {
+    "nb": "Eksporter opptak",
+    "en": "Export recording",
+    "de": "Aufnahme exportieren",
+    "es": "Exportar grabación"
+  },
+  "Eksporterer videofil…": {
+    "nb": "Eksporterer videofil…",
+    "en": "Exporting video file…",
+    "de": "Videodatei wird exportiert…",
+    "es": "Exportando vídeo…"
+  },
+  "Eldste først": {
+    "nb": "Eldste først",
+    "en": "Oldest first",
+    "de": "Älteste zuerst",
+    "es": "Más antiguas primero"
+  },
+  "En videofil ble bevart, men kunne ikke registreres ferdig. Se feilmeldingen for filplasseringen.": {
+    "nb": "En videofil ble bevart, men kunne ikke registreres ferdig. Se feilmeldingen for filplasseringen.",
+    "en": "A video file was preserved but could not be fully registered. See the error message for its location.",
+    "de": "Eine Videodatei wurde erhalten, konnte aber nicht vollständig registriert werden. Der Speicherort steht in der Fehlermeldung.",
+    "es": "Se conservó un vídeo, pero no se pudo registrar por completo. Consulta su ubicación en el mensaje de error."
+  },
+  "Endre navn": {
+    "nb": "Endre navn",
+    "en": "Rename",
+    "de": "Umbenennen",
+    "es": "Cambiar nombre"
+  },
+  "Enkelt. Og helt ditt.": {
+    "nb": "Enkelt. Og helt ditt.",
+    "en": "Simple. And all yours.",
+    "de": "Einfach. Und ganz deins.",
+    "es": "Sencillo. Y solo tuyo."
+  },
+  "Et lite tips: Lukk det du ikke vil vise, og slå av varsler før du starter. Opptakskontrollene blir ikke med i videoen.": {
+    "nb": "Et lite tips: Lukk det du ikke vil vise, og slå av varsler før du starter. Opptakskontrollene blir ikke med i videoen.",
+    "en": "A quick tip: close anything you do not want to show and turn off notifications before you start. Recording controls stay out of the video.",
+    "de": "Ein Tipp: Schließe alles, was du nicht zeigen möchtest, und deaktiviere Mitteilungen. Die Aufnahmesteuerung erscheint nicht im Video.",
+    "es": "Un consejo: cierra lo que no quieras mostrar y desactiva las notificaciones. Los controles de grabación no aparecerán en el vídeo."
+  },
+  "Et opptak pågår": {
+    "nb": "Et opptak pågår",
+    "en": "Recording in progress",
+    "de": "Aufnahme läuft",
+    "es": "Hay una grabación en curso"
+  },
+  "FACECAM": {
+    "nb": "FACECAM",
+    "en": "FACECAM",
+    "de": "KAMERABILD",
+    "es": "CÁMARA SUPERPUESTA"
+  },
+  "Fant {0} avbrutte opptak. Biblioteket må kunne åpnes før de kan gjenopprettes. Filene er bevart i {1}.": {
+    "nb": "Fant {0} avbrutte opptak. Biblioteket må kunne åpnes før de kan gjenopprettes. Filene er bevart i {1}.",
+    "en": "Found {0} interrupted recordings. The library must be accessible before recovery. Files are preserved in {1}.",
+    "de": "{0} unterbrochene Aufnahmen gefunden. Die Mediathek muss vor der Wiederherstellung zugänglich sein. Die Dateien liegen in {1}.",
+    "es": "Se encontraron {0} grabaciones interrumpidas. La biblioteca debe estar accesible para recuperarlas. Los archivos se conservan en {1}."
+  },
+  "Firkantet": {
+    "nb": "Firkantet",
+    "en": "Square",
+    "de": "Quadratisch",
+    "es": "Cuadrada"
+  },
+  "Flytt til papirkurven": {
+    "nb": "Flytt til papirkurven",
+    "en": "Move to Trash",
+    "de": "In den Papierkorb",
+    "es": "Mover a la papelera"
+  },
+  "Flytte opptaket til papirkurven?": {
+    "nb": "Flytte opptaket til papirkurven?",
+    "en": "Move this recording to Trash?",
+    "de": "Aufnahme in den Papierkorb verschieben?",
+    "es": "¿Mover esta grabación a la papelera?"
+  },
+  "For høyt": {
+    "nb": "For høyt",
+    "en": "Too loud",
+    "de": "Zu laut",
+    "es": "Demasiado alto"
+  },
+  "For høyt · senk inngangsnivået eller flytt deg unna": {
+    "nb": "For høyt · senk inngangsnivået eller flytt deg unna",
+    "en": "Too loud · lower the input level or move farther away",
+    "de": "Zu laut · Eingangspegel senken oder Abstand vergrößern",
+    "es": "Demasiado alto · baja el nivel de entrada o aléjate"
+  },
+  "For kameraboblen og kameraopptak": {
+    "nb": "For kameraboblen og kameraopptak",
+    "en": "For facecam and camera recordings",
+    "de": "Für das Kamerabild und Kameraaufnahmen",
+    "es": "Para la cámara superpuesta y las grabaciones de cámara"
+  },
+  "For stemmen din i videoen": {
+    "nb": "For stemmen din i videoen",
+    "en": "For your voice in the video",
+    "de": "Für deine Stimme im Video",
+    "es": "Para tu voz en el vídeo"
+  },
+  "For å ta opp en skjerm eller et vindu": {
+    "nb": "For å ta opp en skjerm eller et vindu",
+    "en": "To record a screen or window",
+    "de": "Zum Aufnehmen eines Bildschirms oder Fensters",
+    "es": "Para grabar una pantalla o ventana"
+  },
+  "Forhåndsvisning av kamera/mikrofon kunne ikke startes.": {
+    "nb": "Forhåndsvisning av kamera/mikrofon kunne ikke startes.",
+    "en": "Camera/microphone preview could not start.",
+    "de": "Die Kamera-/Mikrofonvorschau konnte nicht gestartet werden.",
+    "es": "No se pudo iniciar la vista previa de cámara o micrófono."
+  },
+  "Forhåndsvisningen ble avbrutt: {0}": {
+    "nb": "Forhåndsvisningen ble avbrutt: {0}",
+    "en": "Preview was interrupted: {0}",
+    "de": "Die Vorschau wurde unterbrochen: {0}",
+    "es": "La vista previa se interrumpió: {0}"
+  },
+  "Forkast og avslutt": {
+    "nb": "Forkast og avslutt",
+    "en": "Discard and quit",
+    "de": "Verwerfen und beenden",
+    "es": "Descartar y salir"
+  },
+  "Forkast opptak": {
+    "nb": "Forkast opptak",
+    "en": "Discard recording",
+    "de": "Aufnahme verwerfen",
+    "es": "Descartar grabación"
+  },
+  "Forkast opptaket": {
+    "nb": "Forkast opptaket",
+    "en": "Discard recording",
+    "de": "Aufnahme verwerfen",
+    "es": "Descartar grabación"
+  },
+  "Forkaste dette opptaket?": {
+    "nb": "Forkaste dette opptaket?",
+    "en": "Discard this recording?",
+    "de": "Diese Aufnahme verwerfen?",
+    "es": "¿Descartar esta grabación?"
+  },
+  "Form": {
+    "nb": "Form",
+    "en": "Shape",
+    "de": "Form",
+    "es": "Forma"
+  },
+  "Fortsett": {
+    "nb": "Fortsett",
+    "en": "Resume",
+    "de": "Fortsetzen",
+    "es": "Reanudar"
+  },
+  "Fortsett opptaket": {
+    "nb": "Fortsett opptaket",
+    "en": "Continue recording",
+    "de": "Aufnahme fortsetzen",
+    "es": "Continuar grabación"
+  },
+  "GJØR KLART": {
+    "nb": "GJØR KLART",
+    "en": "GETTING READY",
+    "de": "VORBEREITUNG",
+    "es": "PREPARANDO"
+  },
+  "Gi Lewtech Record tilgang til {0} i Systeminnstillinger → Personvern og sikkerhet, og prøv igjen.": {
+    "nb": "Gi Lewtech Record tilgang til {0} i Systeminnstillinger → Personvern og sikkerhet, og prøv igjen.",
+    "en": "Allow Lewtech Record access to {0} in System Settings → Privacy & Security, then try again.",
+    "de": "Erlaube Lewtech Record den Zugriff auf {0} unter Systemeinstellungen → Datenschutz & Sicherheit und versuche es erneut.",
+    "es": "Permite a Lewtech Record acceder a {0} en Ajustes del Sistema → Privacidad y seguridad y vuelve a intentarlo."
+  },
+  "Gi opptaket et navn før du lagrer.": {
+    "nb": "Gi opptaket et navn før du lagrer.",
+    "en": "Name the recording before saving.",
+    "de": "Benenne die Aufnahme vor dem Speichern.",
+    "es": "Pon un nombre a la grabación antes de guardarla."
+  },
+  "Gi opptaket et nytt navn": {
+    "nb": "Gi opptaket et nytt navn",
+    "en": "Rename recording",
+    "de": "Aufnahme umbenennen",
+    "es": "Cambiar nombre de la grabación"
+  },
+  "Gjenopprettet {0} opptak i biblioteket.": {
+    "nb": "Gjenopprettet {0} opptak i biblioteket.",
+    "en": "Recovered {0} recordings in the library.",
+    "de": "{0} Aufnahmen in der Mediathek wiederhergestellt.",
+    "es": "Se recuperaron {0} grabaciones en la biblioteca."
+  },
+  "Gjør opptaket klart …": {
+    "nb": "Gjør opptaket klart …",
+    "en": "Preparing recording…",
+    "de": "Aufnahme wird vorbereitet…",
+    "es": "Preparando grabación…"
+  },
+  "Hele den valgte skjermen": {
+    "nb": "Hele den valgte skjermen",
+    "en": "Entire selected screen",
+    "de": "Gesamter ausgewählter Bildschirm",
+    "es": "Toda la pantalla seleccionada"
+  },
+  "Hele «{0}» · kun denne skjermen": {
+    "nb": "Hele «{0}» · kun denne skjermen",
+    "en": "Entire “{0}” · this screen only",
+    "de": "Gesamter Bildschirm „{0}“ · nur dieser Bildschirm",
+    "es": "Toda «{0}» · solo esta pantalla"
+  },
+  "Henter tilgjengelige skjermer og vinduer …": {
+    "nb": "Henter tilgjengelige skjermer og vinduer …",
+    "en": "Loading available screens and windows…",
+    "de": "Verfügbare Bildschirme und Fenster werden geladen…",
+    "es": "Cargando pantallas y ventanas disponibles…"
+  },
+  "Høyt": {
+    "nb": "Høyt",
+    "en": "Loud",
+    "de": "Laut",
+    "es": "Alto"
+  },
+  "Høyt nivå · trekk deg litt tilbake": {
+    "nb": "Høyt nivå · trekk deg litt tilbake",
+    "en": "High level · move back a little",
+    "de": "Hoher Pegel · etwas Abstand nehmen",
+    "es": "Nivel alto · aléjate un poco"
+  },
+  "Ideene dine, klare til å spilles av.": {
+    "nb": "Ideene dine, klare til å spilles av.",
+    "en": "Your ideas, ready to play.",
+    "de": "Deine Ideen, bereit zum Abspielen.",
+    "es": "Tus ideas, listas para reproducir."
+  },
+  "Ingen bilder mottas fra valgt kilde. Kontroller kamera og skjermtilgang.": {
+    "nb": "Ingen bilder mottas fra valgt kilde. Kontroller kamera og skjermtilgang.",
+    "en": "No frames received from the selected source. Check the camera and screen permissions.",
+    "de": "Keine Bilder von der gewählten Quelle empfangen. Prüfe Kamera und Bildschirmzugriff.",
+    "es": "No se reciben imágenes de la fuente seleccionada. Comprueba la cámara y los permisos de pantalla."
+  },
+  "Ingen kameraer funnet": {
+    "nb": "Ingen kameraer funnet",
+    "en": "No cameras found",
+    "de": "Keine Kameras gefunden",
+    "es": "No se encontraron cámaras"
+  },
+  "Ingen mikrofoner funnet": {
+    "nb": "Ingen mikrofoner funnet",
+    "en": "No microphones found",
+    "de": "Keine Mikrofone gefunden",
+    "es": "No se encontraron micrófonos"
+  },
+  "Ingen opptak med dette navnet": {
+    "nb": "Ingen opptak med dette navnet",
+    "en": "No recordings with this name",
+    "de": "Keine Aufnahmen mit diesem Namen",
+    "es": "No hay grabaciones con este nombre"
+  },
+  "Ingen skjermer tilgjengelig": {
+    "nb": "Ingen skjermer tilgjengelig",
+    "en": "No screens available",
+    "de": "Keine Bildschirme verfügbar",
+    "es": "No hay pantallas disponibles"
+  },
+  "Ingen skjermkilde er tilgjengelig.": {
+    "nb": "Ingen skjermkilde er tilgjengelig.",
+    "en": "No screen source is available.",
+    "de": "Keine Bildschirmquelle verfügbar.",
+    "es": "No hay ninguna fuente de pantalla disponible."
+  },
+  "Ingen tydelig lyd · snakk for å teste": {
+    "nb": "Ingen tydelig lyd · snakk for å teste",
+    "en": "No clear sound · speak to test",
+    "de": "Kein deutlicher Ton · zum Testen sprechen",
+    "es": "Sin sonido claro · habla para probar"
+  },
+  "Ingen videobilder ble mottatt. Kontroller kilde og tillatelser, og prøv igjen.": {
+    "nb": "Ingen videobilder ble mottatt. Kontroller kilde og tillatelser, og prøv igjen.",
+    "en": "No video frames received. Check the source and permissions, then try again.",
+    "de": "Keine Videobilder empfangen. Prüfe Quelle und Berechtigungen und versuche es erneut.",
+    "es": "No se recibieron imágenes de vídeo. Comprueba la fuente y los permisos y vuelve a intentarlo."
+  },
+  "Innstillinger": {
+    "nb": "Innstillinger",
+    "en": "Settings",
+    "de": "Einstellungen",
+    "es": "Ajustes"
+  },
+  "Kamera": {
+    "nb": "Kamera",
+    "en": "Camera",
+    "de": "Kamera",
+    "es": "Cámara"
+  },
+  "Kamera eller mikrofon kunne ikke startes.": {
+    "nb": "Kamera eller mikrofon kunne ikke startes.",
+    "en": "Camera or microphone could not start.",
+    "de": "Kamera oder Mikrofon konnte nicht gestartet werden.",
+    "es": "No se pudo iniciar la cámara o el micrófono."
+  },
+  "Kamerabildet kunne ikke klargjøres.": {
+    "nb": "Kamerabildet kunne ikke klargjøres.",
+    "en": "Camera image could not be prepared.",
+    "de": "Das Kamerabild konnte nicht vorbereitet werden.",
+    "es": "No se pudo preparar la imagen de la cámara."
+  },
+  "Kameraet eller mikrofonen ble avbrutt.": {
+    "nb": "Kameraet eller mikrofonen ble avbrutt.",
+    "en": "Camera or microphone was interrupted.",
+    "de": "Kamera oder Mikrofon wurde unterbrochen.",
+    "es": "La cámara o el micrófono se interrumpió."
+  },
+  "Kameraet kan ikke åpnes. Kontroller om en annen app bruker det.": {
+    "nb": "Kameraet kan ikke åpnes. Kontroller om en annen app bruker det.",
+    "en": "Cannot open the camera. Check whether another app is using it.",
+    "de": "Die Kamera lässt sich nicht öffnen. Prüfe, ob eine andere App sie verwendet.",
+    "es": "No se puede abrir la cámara. Comprueba si otra aplicación la está usando."
+  },
+  "Kameraet kunne ikke åpnes.": {
+    "nb": "Kameraet kunne ikke åpnes.",
+    "en": "Could not open the camera.",
+    "de": "Die Kamera konnte nicht geöffnet werden.",
+    "es": "No se pudo abrir la cámara."
+  },
+  "Klargjør kamera og mikrofon …": {
+    "nb": "Klargjør kamera og mikrofon …",
+    "en": "Preparing camera and microphone…",
+    "de": "Kamera und Mikrofon werden vorbereitet…",
+    "es": "Preparando cámara y micrófono…"
+  },
+  "Klargjør …": {
+    "nb": "Klargjør …",
+    "en": "Preparing…",
+    "de": "Vorbereitung…",
+    "es": "Preparando…"
+  },
+  "Koble til et kamera, eller velg kun skjerm.": {
+    "nb": "Koble til et kamera, eller velg kun skjerm.",
+    "en": "Connect a camera or choose screen only.",
+    "de": "Schließe eine Kamera an oder wähle nur Bildschirm.",
+    "es": "Conecta una cámara o elige solo pantalla."
+  },
+  "Kontrollerer kameratilgang …": {
+    "nb": "Kontrollerer kameratilgang …",
+    "en": "Checking camera permission…",
+    "de": "Kamerazugriff wird geprüft…",
+    "es": "Comprobando el permiso de cámara…"
+  },
+  "Kontrollerer mikrofontilgang …": {
+    "nb": "Kontrollerer mikrofontilgang …",
+    "en": "Checking microphone permission…",
+    "de": "Mikrofonzugriff wird geprüft…",
+    "es": "Comprobando el permiso de micrófono…"
+  },
+  "Kun kamera": {
+    "nb": "Kun kamera",
+    "en": "Camera only",
+    "de": "Nur Kamera",
+    "es": "Solo cámara"
+  },
+  "Kun kamera · ingen skjerm filmes": {
+    "nb": "Kun kamera · ingen skjerm filmes",
+    "en": "Camera only · no screen recorded",
+    "de": "Nur Kamera · kein Bildschirm wird aufgenommen",
+    "es": "Solo cámara · no se graba la pantalla"
+  },
+  "Kun skjerm": {
+    "nb": "Kun skjerm",
+    "en": "Screen only",
+    "de": "Nur Bildschirm",
+    "es": "Solo pantalla"
+  },
+  "Kun vinduet «{0}»": {
+    "nb": "Kun vinduet «{0}»",
+    "en": "Only the window “{0}”",
+    "de": "Nur das Fenster „{0}“",
+    "es": "Solo la ventana «{0}»"
+  },
+  "Kunne ikke lagre mikrofonsporet.": {
+    "nb": "Kunne ikke lagre mikrofonsporet.",
+    "en": "Could not save the microphone track.",
+    "de": "Die Mikrofonspur konnte nicht gespeichert werden.",
+    "es": "No se pudo guardar la pista del micrófono."
+  },
+  "Kunne ikke opprette lydspor.": {
+    "nb": "Kunne ikke opprette lydspor.",
+    "en": "Could not create the audio track.",
+    "de": "Die Audiospur konnte nicht erstellt werden.",
+    "es": "No se pudo crear la pista de audio."
+  },
+  "Kunne ikke opprette videospor.": {
+    "nb": "Kunne ikke opprette videospor.",
+    "en": "Could not create the video track.",
+    "de": "Die Videospur konnte nicht erstellt werden.",
+    "es": "No se pudo crear la pista de vídeo."
+  },
+  "Kunne ikke reservere minne til videobildet.": {
+    "nb": "Kunne ikke reservere minne til videobildet.",
+    "en": "Could not allocate memory for the video frame.",
+    "de": "Für das Videobild konnte kein Speicher reserviert werden.",
+    "es": "No se pudo reservar memoria para la imagen de vídeo."
+  },
+  "Kunne ikke skrive videobildet til disk.": {
+    "nb": "Kunne ikke skrive videobildet til disk.",
+    "en": "Could not write the video frame to disk.",
+    "de": "Das Videobild konnte nicht auf die Festplatte geschrieben werden.",
+    "es": "No se pudo escribir la imagen de vídeo en el disco."
+  },
+  "Kunne ikke synkronisere mikrofonsporet.": {
+    "nb": "Kunne ikke synkronisere mikrofonsporet.",
+    "en": "Could not synchronize the microphone track.",
+    "de": "Die Mikrofonspur konnte nicht synchronisiert werden.",
+    "es": "No se pudo sincronizar la pista del micrófono."
+  },
+  "Kunne ikke åpne biblioteket: {0}": {
+    "nb": "Kunne ikke åpne biblioteket: {0}",
+    "en": "Could not open the library: {0}",
+    "de": "Die Mediathek konnte nicht geöffnet werden: {0}",
+    "es": "No se pudo abrir la biblioteca: {0}"
+  },
+  "LOKALT": {
+    "nb": "LOKALT",
+    "en": "LOCAL",
+    "de": "LOKAL",
+    "es": "LOCAL"
+  },
+  "Lag ditt første opptak": {
+    "nb": "Lag ditt første opptak",
+    "en": "Make your first recording",
+    "de": "Erstelle deine erste Aufnahme",
+    "es": "Crea tu primera grabación"
+  },
+  "Laget for å vise, forklare og komme videre.": {
+    "nb": "Laget for å vise, forklare og komme videre.",
+    "en": "Made to show, explain and move forward.",
+    "de": "Zum Zeigen, Erklären und Weiterkommen.",
+    "es": "Para mostrar, explicar y avanzar."
+  },
+  "Lagre": {
+    "nb": "Lagre",
+    "en": "Save",
+    "de": "Speichern",
+    "es": "Guardar"
+  },
+  "Lagre og avslutt": {
+    "nb": "Lagre og avslutt",
+    "en": "Save and quit",
+    "de": "Speichern und beenden",
+    "es": "Guardar y salir"
+  },
+  "Lagre opptaket før du avslutter Lewtech Record?": {
+    "nb": "Lagre opptaket før du avslutter Lewtech Record?",
+    "en": "Save the recording before quitting Lewtech Record?",
+    "de": "Aufnahme vor dem Beenden von Lewtech Record speichern?",
+    "es": "¿Guardar la grabación antes de salir de Lewtech Record?"
+  },
+  "Lagrer et skjerm- eller kameraopptak": {
+    "nb": "Lagrer et skjerm- eller kameraopptak",
+    "en": "Saving a screen or camera recording",
+    "de": "Bildschirm- oder Kameraaufnahme wird gespeichert",
+    "es": "Guardando una grabación de pantalla o cámara"
+  },
+  "Lagrer videoen i biblioteket …": {
+    "nb": "Lagrer videoen i biblioteket …",
+    "en": "Saving the video to the library…",
+    "de": "Video wird in der Mediathek gespeichert…",
+    "es": "Guardando el vídeo en la biblioteca…"
+  },
+  "Lagret lokalt": {
+    "nb": "Lagret lokalt",
+    "en": "Saved locally",
+    "de": "Lokal gespeichert",
+    "es": "Guardado localmente"
+  },
+  "Lagring av videoen mislyktes.": {
+    "nb": "Lagring av videoen mislyktes.",
+    "en": "Failed to save the video.",
+    "de": "Das Video konnte nicht gespeichert werden.",
+    "es": "No se pudo guardar el vídeo."
+  },
+  "Lavt": {
+    "nb": "Lavt",
+    "en": "Low",
+    "de": "Leise",
+    "es": "Bajo"
+  },
+  "Lavt nivå · snakk nærmere mikrofonen": {
+    "nb": "Lavt nivå · snakk nærmere mikrofonen",
+    "en": "Low level · speak closer to the microphone",
+    "de": "Niedriger Pegel · näher am Mikrofon sprechen",
+    "es": "Nivel bajo · habla más cerca del micrófono"
+  },
+  "Lokal lagring": {
+    "nb": "Lokal lagring",
+    "en": "Local storage",
+    "de": "Lokaler Speicher",
+    "es": "Almacenamiento local"
+  },
+  "Lukk avspilling": {
+    "nb": "Lukk avspilling",
+    "en": "Close playback",
+    "de": "Wiedergabe schließen",
+    "es": "Cerrar reproducción"
+  },
+  "Lukk gjenopprettingsmelding": {
+    "nb": "Lukk gjenopprettingsmelding",
+    "en": "Dismiss recovery message",
+    "de": "Wiederherstellungsmeldung schließen",
+    "es": "Cerrar mensaje de recuperación"
+  },
+  "Lukk melding": {
+    "nb": "Lukk melding",
+    "en": "Dismiss message",
+    "de": "Meldung schließen",
+    "es": "Cerrar mensaje"
+  },
+  "Mac-en gikk i hvile eller byttet brukerøkt. Opptaket avsluttes og lagres.": {
+    "nb": "Mac-en gikk i hvile eller byttet brukerøkt. Opptaket avsluttes og lagres.",
+    "en": "The Mac went to sleep or switched user sessions. Recording will stop and be saved.",
+    "de": "Der Mac ist im Ruhezustand oder hat die Benutzersitzung gewechselt. Die Aufnahme wird beendet und gespeichert.",
+    "es": "El Mac entró en reposo o cambió de sesión. La grabación se detendrá y se guardará."
+  },
+  "Mikrofon": {
+    "nb": "Mikrofon",
+    "en": "Microphone",
+    "de": "Mikrofon",
+    "es": "Micrófono"
+  },
+  "Mikrofonen er aktiv": {
+    "nb": "Mikrofonen er aktiv",
+    "en": "Microphone is active",
+    "de": "Mikrofon ist aktiv",
+    "es": "El micrófono está activo"
+  },
+  "Mikrofonen kunne ikke åpnes.": {
+    "nb": "Mikrofonen kunne ikke åpnes.",
+    "en": "Could not open the microphone.",
+    "de": "Das Mikrofon konnte nicht geöffnet werden.",
+    "es": "No se pudo abrir el micrófono."
+  },
+  "Mikrofonnivå. {0}": {
+    "nb": "Mikrofonnivå. {0}",
+    "en": "Microphone level. {0}",
+    "de": "Mikrofonpegel. {0}",
+    "es": "Nivel del micrófono. {0}"
+  },
+  "Mikrofonsporet kunne ikke klargjøres.": {
+    "nb": "Mikrofonsporet kunne ikke klargjøres.",
+    "en": "Microphone track could not be prepared.",
+    "de": "Die Mikrofonspur konnte nicht vorbereitet werden.",
+    "es": "No se pudo preparar la pista del micrófono."
+  },
+  "Mindre facecam": {
+    "nb": "Mindre facecam",
+    "en": "Smaller facecam",
+    "de": "Kamerabild verkleinern",
+    "es": "Reducir cámara superpuesta"
+  },
+  "Navn A–Å": {
+    "nb": "Navn A–Å",
+    "en": "Name A–Z",
+    "de": "Name A–Z",
+    "es": "Nombre A–Z"
+  },
+  "Navn på opptaket": {
+    "nb": "Navn på opptaket",
+    "en": "Recording name",
+    "de": "Name der Aufnahme",
+    "es": "Nombre de la grabación"
+  },
+  "Nede til høyre": {
+    "nb": "Nede til høyre",
+    "en": "Bottom right",
+    "de": "Unten rechts",
+    "es": "Abajo a la derecha"
+  },
+  "Nede til venstre": {
+    "nb": "Nede til venstre",
+    "en": "Bottom left",
+    "de": "Unten links",
+    "es": "Abajo a la izquierda"
+  },
+  "Nyeste først": {
+    "nb": "Nyeste først",
+    "en": "Newest first",
+    "de": "Neueste zuerst",
+    "es": "Más recientes primero"
+  },
+  "Nytt opptak": {
+    "nb": "Nytt opptak",
+    "en": "New recording",
+    "de": "Neue Aufnahme",
+    "es": "Nueva grabación"
+  },
+  "Oppdater enheter": {
+    "nb": "Oppdater enheter",
+    "en": "Refresh devices",
+    "de": "Geräte aktualisieren",
+    "es": "Actualizar dispositivos"
+  },
+  "Opptak": {
+    "nb": "Opptak",
+    "en": "Recording",
+    "de": "Aufnahme",
+    "es": "Grabación"
+  },
+  "Opptak på pause": {
+    "nb": "Opptak på pause",
+    "en": "Recording paused",
+    "de": "Aufnahme pausiert",
+    "es": "Grabación en pausa"
+  },
+  "Opptak pågår": {
+    "nb": "Opptak pågår",
+    "en": "Recording in progress",
+    "de": "Aufnahme läuft",
+    "es": "Grabación en curso"
+  },
+  "Opptakene dine blir på Mac-en. Ingen konto, ingen opplasting.": {
+    "nb": "Opptakene dine blir på Mac-en. Ingen konto, ingen opplasting.",
+    "en": "Your recordings stay on your Mac. No account, no uploads.",
+    "de": "Deine Aufnahmen bleiben auf deinem Mac. Kein Konto, kein Hochladen.",
+    "es": "Tus grabaciones se quedan en el Mac. Sin cuenta ni subidas."
+  },
+  "Opptaket ble forkastet.": {
+    "nb": "Opptaket ble forkastet.",
+    "en": "Recording discarded.",
+    "de": "Aufnahme verworfen.",
+    "es": "Grabación descartada."
+  },
+  "Opptaket er lagret i videobiblioteket.": {
+    "nb": "Opptaket er lagret i videobiblioteket.",
+    "en": "Recording saved to the video library.",
+    "de": "Aufnahme in der Mediathek gespeichert.",
+    "es": "Grabación guardada en la biblioteca de vídeos."
+  },
+  "Opptaket kunne ikke legges til: {0} Eventuelle videodata ligger i .incomplete-mappen i biblioteket.": {
+    "nb": "Opptaket kunne ikke legges til: {0} Eventuelle videodata ligger i .incomplete-mappen i biblioteket.",
+    "en": "Could not add the recording: {0} Any video data is in the library's .incomplete folder.",
+    "de": "Die Aufnahme konnte nicht hinzugefügt werden: {0} Eventuelle Videodaten liegen im Ordner .incomplete der Mediathek.",
+    "es": "No se pudo añadir la grabación: {0} Los datos de vídeo disponibles están en la carpeta .incomplete de la biblioteca."
+  },
+  "Opptaksstudio": {
+    "nb": "Opptaksstudio",
+    "en": "Recording studio",
+    "de": "Aufnahmestudio",
+    "es": "Estudio de grabación"
+  },
+  "Passe": {
+    "nb": "Passe",
+    "en": "Good",
+    "de": "Passend",
+    "es": "Adecuado"
+  },
+  "Passe talenivå": {
+    "nb": "Passe talenivå",
+    "en": "Good speech level",
+    "de": "Guter Sprachpegel",
+    "es": "Nivel de voz adecuado"
+  },
+  "Pause": {
+    "nb": "Pause",
+    "en": "Pause",
+    "de": "Pause",
+    "es": "Pausa"
+  },
+  "Pause opptaket": {
+    "nb": "Pause opptaket",
+    "en": "Pause recording",
+    "de": "Aufnahme pausieren",
+    "es": "Pausar grabación"
+  },
+  "Pausetiden blir ikke med i videoen": {
+    "nb": "Pausetiden blir ikke med i videoen",
+    "en": "Paused time is left out of the video",
+    "de": "Pausenzeiten erscheinen nicht im Video",
+    "es": "El tiempo en pausa no se incluye en el vídeo"
+  },
+  "Prøv forhåndsvisning igjen": {
+    "nb": "Prøv forhåndsvisning igjen",
+    "en": "Retry preview",
+    "de": "Vorschau erneut versuchen",
+    "es": "Reintentar vista previa"
+  },
+  "RECORD": {
+    "nb": "RECORD",
+    "en": "RECORD",
+    "de": "RECORD",
+    "es": "RECORD"
+  },
+  "Rund": {
+    "nb": "Rund",
+    "en": "Round",
+    "de": "Rund",
+    "es": "Redonda"
+  },
+  "SKJERM ELLER VINDU": {
+    "nb": "SKJERM ELLER VINDU",
+    "en": "SCREEN OR WINDOW",
+    "de": "BILDSCHIRM ODER FENSTER",
+    "es": "PANTALLA O VENTANA"
+  },
+  "Skjerm": {
+    "nb": "Skjerm",
+    "en": "Screen",
+    "de": "Bildschirm",
+    "es": "Pantalla"
+  },
+  "Skjerm og kamera": {
+    "nb": "Skjerm og kamera",
+    "en": "Screen and camera",
+    "de": "Bildschirm und Kamera",
+    "es": "Pantalla y cámara"
+  },
+  "Skjermbildet er ikke tilgjengelig. Åpne skjermtilgang og slå på Lewtech Record. Hvis den allerede er på, avslutt og åpne appen igjen etter at du har gitt tilgang. macOS: {0}": {
+    "nb": "Skjermbildet er ikke tilgjengelig. Åpne skjermtilgang og slå på Lewtech Record. Hvis den allerede er på, avslutt og åpne appen igjen etter at du har gitt tilgang. macOS: {0}",
+    "en": "Screen content is unavailable. Open screen permissions and enable Lewtech Record. If already enabled, quit and reopen the app after granting access. macOS: {0}",
+    "de": "Der Bildschirminhalt ist nicht verfügbar. Öffne die Bildschirmberechtigungen und aktiviere Lewtech Record. Falls bereits aktiviert, beende und öffne die App nach der Freigabe erneut. macOS: {0}",
+    "es": "El contenido de la pantalla no está disponible. Abre los permisos de pantalla y activa Lewtech Record. Si ya está activado, cierra y vuelve a abrir la aplicación tras conceder acceso. macOS: {0}"
+  },
+  "Skjermen er frakoblet – velg en ny": {
+    "nb": "Skjermen er frakoblet – velg en ny",
+    "en": "Screen disconnected – select another",
+    "de": "Bildschirm getrennt – anderen auswählen",
+    "es": "Pantalla desconectada: elige otra"
+  },
+  "Skjermkilden er ikke lenger tilgjengelig. Opptaket avsluttes og lagres.": {
+    "nb": "Skjermkilden er ikke lenger tilgjengelig. Opptaket avsluttes og lagres.",
+    "en": "The screen source is no longer available. Recording will stop and be saved.",
+    "de": "Die Bildschirmquelle ist nicht mehr verfügbar. Die Aufnahme wird beendet und gespeichert.",
+    "es": "La fuente de pantalla ya no está disponible. La grabación se detendrá y se guardará."
+  },
+  "Skjermopptaket ble avbrutt: {0}": {
+    "nb": "Skjermopptaket ble avbrutt: {0}",
+    "en": "Screen recording was interrupted: {0}",
+    "de": "Bildschirmaufnahme unterbrochen: {0}",
+    "es": "La grabación de pantalla se interrumpió: {0}"
+  },
+  "Snakk for å teste mikrofonen · ingen lyd lagres": {
+    "nb": "Snakk for å teste mikrofonen · ingen lyd lagres",
+    "en": "Speak to test the microphone · no audio is saved",
+    "de": "Sprich zum Testen · es wird kein Ton gespeichert",
+    "es": "Habla para probar el micrófono · no se guarda audio"
+  },
+  "Spill av": {
+    "nb": "Spill av",
+    "en": "Play",
+    "de": "Abspielen",
+    "es": "Reproducir"
+  },
+  "Spill av {0}": {
+    "nb": "Spill av {0}",
+    "en": "Play {0}",
+    "de": "{0} abspielen",
+    "es": "Reproducir {0}"
+  },
+  "Start opptak": {
+    "nb": "Start opptak",
+    "en": "Start recording",
+    "de": "Aufnahme starten",
+    "es": "Iniciar grabación"
+  },
+  "Starter forhåndsvisning …": {
+    "nb": "Starter forhåndsvisning …",
+    "en": "Starting preview…",
+    "de": "Vorschau wird gestartet…",
+    "es": "Iniciando vista previa…"
+  },
+  "Stopp og lagre": {
+    "nb": "Stopp og lagre",
+    "en": "Stop and save",
+    "de": "Stoppen und speichern",
+    "es": "Detener y guardar"
+  },
+  "Større facecam": {
+    "nb": "Større facecam",
+    "en": "Larger facecam",
+    "de": "Kamerabild vergrößern",
+    "es": "Ampliar cámara superpuesta"
+  },
+  "Størrelse": {
+    "nb": "Størrelse",
+    "en": "Size",
+    "de": "Größe",
+    "es": "Tamaño"
+  },
+  "Søk i opptakene dine": {
+    "nb": "Søk i opptakene dine",
+    "en": "Search your recordings",
+    "de": "Aufnahmen durchsuchen",
+    "es": "Buscar en tus grabaciones"
+  },
+  "Søk i videobibliotek": {
+    "nb": "Søk i videobibliotek",
+    "en": "Search video library",
+    "de": "Mediathek durchsuchen",
+    "es": "Buscar en la biblioteca de vídeos"
+  },
+  "TAR OPP": {
+    "nb": "TAR OPP",
+    "en": "RECORDING",
+    "de": "AUFNAHME LÄUFT",
+    "es": "GRABANDO"
+  },
+  "Ta den tiden du trenger. Videoen lagres lokalt når du stopper.": {
+    "nb": "Ta den tiden du trenger. Videoen lagres lokalt når du stopper.",
+    "en": "Take your time. The video is saved locally when you stop.",
+    "de": "Nimm dir Zeit. Das Video wird beim Stoppen lokal gespeichert.",
+    "es": "Tómate tu tiempo. El vídeo se guarda localmente al detener la grabación."
+  },
+  "Tar opp": {
+    "nb": "Tar opp",
+    "en": "Recording",
+    "de": "Aufnahme läuft",
+    "es": "Grabando"
+  },
+  "Tillatelser på Mac": {
+    "nb": "Tillatelser på Mac",
+    "en": "Mac permissions",
+    "de": "Mac-Berechtigungen",
+    "es": "Permisos del Mac"
+  },
+  "Tre sekunder til å gjøre deg klar": {
+    "nb": "Tre sekunder til å gjøre deg klar",
+    "en": "Three seconds to get ready",
+    "de": "Drei Sekunden zum Vorbereiten",
+    "es": "Tres segundos para prepararte"
+  },
+  "Tøm søk": {
+    "nb": "Tøm søk",
+    "en": "Clear search",
+    "de": "Suche leeren",
+    "es": "Borrar búsqueda"
+  },
+  "Tøm søket": {
+    "nb": "Tøm søket",
+    "en": "Clear search",
+    "de": "Suche leeren",
+    "es": "Borrar búsqueda"
+  },
+  "Undersøker {0} opptak fra forrige kjøring…": {
+    "nb": "Undersøker {0} opptak fra forrige kjøring…",
+    "en": "Checking {0} recordings from the previous session…",
+    "de": "{0} Aufnahmen aus der letzten Sitzung werden geprüft…",
+    "es": "Comprobando {0} grabaciones de la sesión anterior…"
+  },
+  "VENTER PÅ BILDE": {
+    "nb": "VENTER PÅ BILDE",
+    "en": "WAITING FOR VIDEO",
+    "de": "WARTE AUF BILD",
+    "es": "ESPERANDO IMAGEN"
+  },
+  "Valg for {0}": {
+    "nb": "Valg for {0}",
+    "en": "Options for {0}",
+    "de": "Optionen für {0}",
+    "es": "Opciones de {0}"
+  },
+  "Valgt kamera er ikke tilgjengelig.": {
+    "nb": "Valgt kamera er ikke tilgjengelig.",
+    "en": "The selected camera is unavailable.",
+    "de": "Die ausgewählte Kamera ist nicht verfügbar.",
+    "es": "La cámara seleccionada no está disponible."
+  },
+  "Valgt mikrofon er ikke tilgjengelig.": {
+    "nb": "Valgt mikrofon er ikke tilgjengelig.",
+    "en": "The selected microphone is unavailable.",
+    "de": "Das ausgewählte Mikrofon ist nicht verfügbar.",
+    "es": "El micrófono seleccionado no está disponible."
+  },
+  "Valgt vindu": {
+    "nb": "Valgt vindu",
+    "en": "Selected window",
+    "de": "Ausgewähltes Fenster",
+    "es": "Ventana seleccionada"
+  },
+  "Veiledende talenivå. Grønt målområde: −30 til −12 dBFS. Gult: −12 til −6 dBFS. Rødt: over −6 dBFS, med fare for overstyring nær 0 dBFS.": {
+    "nb": "Veiledende talenivå. Grønt målområde: −30 til −12 dBFS. Gult: −12 til −6 dBFS. Rødt: over −6 dBFS, med fare for overstyring nær 0 dBFS.",
+    "en": "Suggested speech level. Green target: −30 to −12 dBFS. Yellow: −12 to −6 dBFS. Red: above −6 dBFS, with clipping risk near 0 dBFS.",
+    "de": "Orientierung für Sprache. Grüner Zielbereich: −30 bis −12 dBFS. Gelb: −12 bis −6 dBFS. Rot: über −6 dBFS, mit Übersteuerungsgefahr nahe 0 dBFS.",
+    "es": "Nivel orientativo de voz. Verde: de −30 a −12 dBFS. Amarillo: de −12 a −6 dBFS. Rojo: más de −6 dBFS, con riesgo de saturación cerca de 0 dBFS."
+  },
+  "Velg en annen plassering enn originalfilen i biblioteket.": {
+    "nb": "Velg en annen plassering enn originalfilen i biblioteket.",
+    "en": "Choose a location other than the original file in the library.",
+    "de": "Wähle einen anderen Speicherort als die Originaldatei in der Mediathek.",
+    "es": "Elige una ubicación distinta a la del archivo original de la biblioteca."
+  },
+  "Velg en skjerm før du starter.": {
+    "nb": "Velg en skjerm før du starter.",
+    "en": "Select a screen before starting.",
+    "de": "Wähle vor dem Start einen Bildschirm.",
+    "es": "Selecciona una pantalla antes de empezar."
+  },
+  "Velg en tilgjengelig mikrofon, eller slå av mikrofonen.": {
+    "nb": "Velg en tilgjengelig mikrofon, eller slå av mikrofonen.",
+    "en": "Select an available microphone or turn the microphone off.",
+    "de": "Wähle ein verfügbares Mikrofon oder schalte es aus.",
+    "es": "Selecciona un micrófono disponible o desactívalo."
+  },
+  "Velg et tilgjengelig kamera, eller bytt til Kun skjerm.": {
+    "nb": "Velg et tilgjengelig kamera, eller bytt til Kun skjerm.",
+    "en": "Select an available camera or switch to Screen only.",
+    "de": "Wähle eine verfügbare Kamera oder wechsle zu Nur Bildschirm.",
+    "es": "Selecciona una cámara disponible o cambia a Solo pantalla."
+  },
+  "Velg hva du vil ta opp. Vi tar vare på resten, lokalt.": {
+    "nb": "Velg hva du vil ta opp. Vi tar vare på resten, lokalt.",
+    "en": "Choose what to record. We take care of the rest, locally.",
+    "de": "Wähle, was du aufnehmen möchtest. Wir kümmern uns um den Rest, lokal.",
+    "es": "Elige qué grabar. Nos ocupamos del resto, en tu Mac."
+  },
+  "Venter på levende bilde fra valgt kilde …": {
+    "nb": "Venter på levende bilde fra valgt kilde …",
+    "en": "Waiting for live video from the selected source…",
+    "de": "Warte auf Livebild der ausgewählten Quelle…",
+    "es": "Esperando imagen en directo de la fuente seleccionada…"
+  },
+  "Videobibliotek": {
+    "nb": "Videobibliotek",
+    "en": "Video library",
+    "de": "Mediathek",
+    "es": "Biblioteca de vídeos"
+  },
+  "Videoen ligger i papirkurven, men bibliotekoversikten kunne ikke oppdateres. Fil: {0}": {
+    "nb": "Videoen ligger i papirkurven, men bibliotekoversikten kunne ikke oppdateres. Fil: {0}",
+    "en": "The video is in Trash, but the library index could not be updated. File: {0}",
+    "de": "Das Video liegt im Papierkorb, aber der Mediatheksindex konnte nicht aktualisiert werden. Datei: {0}",
+    "es": "El vídeo está en la papelera, pero no se pudo actualizar el índice de la biblioteca. Archivo: {0}"
+  },
+  "Videoen tas opp uten mikrofon.": {
+    "nb": "Videoen tas opp uten mikrofon.",
+    "en": "Video will be recorded without microphone audio.",
+    "de": "Das Video wird ohne Mikrofonton aufgenommen.",
+    "es": "El vídeo se grabará sin audio del micrófono."
+  },
+  "Videoer, miniatyrbilder og bibliotekoversikt lagres samlet her:": {
+    "nb": "Videoer, miniatyrbilder og bibliotekoversikt lagres samlet her:",
+    "en": "Videos, thumbnails and the library index are stored together here:",
+    "de": "Videos, Vorschaubilder und der Mediatheksindex werden hier gespeichert:",
+    "es": "Los vídeos, las miniaturas y el índice de la biblioteca se guardan aquí:"
+  },
+  "Videofilen er bevart i {0}, men bibliotekoversikten kunne ikke lagres: {1}": {
+    "nb": "Videofilen er bevart i {0}, men bibliotekoversikten kunne ikke lagres: {1}",
+    "en": "The video file is preserved at {0}, but the library index could not be saved: {1}",
+    "de": "Die Videodatei ist unter {0} erhalten, aber der Mediatheksindex konnte nicht gespeichert werden: {1}",
+    "es": "El vídeo se conserva en {0}, pero no se pudo guardar el índice de la biblioteca: {1}"
+  },
+  "Videofilen er bevart, men oversikten kunne ikke lagres: {0}": {
+    "nb": "Videofilen er bevart, men oversikten kunne ikke lagres: {0}",
+    "en": "The video file is preserved, but the index could not be saved: {0}",
+    "de": "Die Videodatei ist erhalten, aber der Index konnte nicht gespeichert werden: {0}",
+    "es": "El vídeo se conserva, pero no se pudo guardar el índice: {0}"
+  },
+  "Videofilen finnes ikke på den lagrede plasseringen. Den kan ha blitt flyttet i Finder.": {
+    "nb": "Videofilen finnes ikke på den lagrede plasseringen. Den kan ha blitt flyttet i Finder.",
+    "en": "The video file is missing from its saved location. It may have been moved in Finder.",
+    "de": "Die Videodatei fehlt am gespeicherten Ort. Möglicherweise wurde sie im Finder verschoben.",
+    "es": "El vídeo no está en su ubicación guardada. Puede que se haya movido desde Finder."
+  },
+  "Videofilen kunne ikke ferdigstilles.": {
+    "nb": "Videofilen kunne ikke ferdigstilles.",
+    "en": "The video file could not be finalized.",
+    "de": "Die Videodatei konnte nicht abgeschlossen werden.",
+    "es": "No se pudo finalizar el vídeo."
+  },
+  "Videofilen kunne ikke åpnes. Originalfilen er beholdt.": {
+    "nb": "Videofilen kunne ikke åpnes. Originalfilen er beholdt.",
+    "en": "The video file could not be opened. The original is preserved.",
+    "de": "Die Videodatei konnte nicht geöffnet werden. Das Original bleibt erhalten.",
+    "es": "No se pudo abrir el vídeo. Se conserva el archivo original."
+  },
+  "Videoopptaket kunne ikke startes.": {
+    "nb": "Videoopptaket kunne ikke startes.",
+    "en": "Video recording could not start.",
+    "de": "Die Videoaufnahme konnte nicht gestartet werden.",
+    "es": "No se pudo iniciar la grabación de vídeo."
+  },
+  "Vinduene vises etter at skjermtilgang er gitt. Oppdater enhetene hvis et vindu mangler.": {
+    "nb": "Vinduene vises etter at skjermtilgang er gitt. Oppdater enhetene hvis et vindu mangler.",
+    "en": "Windows appear after screen access is granted. Refresh devices if a window is missing.",
+    "de": "Fenster werden nach der Bildschirmfreigabe angezeigt. Aktualisiere die Geräte, falls ein Fenster fehlt.",
+    "es": "Las ventanas aparecen tras conceder acceso a la pantalla. Actualiza los dispositivos si falta alguna."
+  },
+  "Vinduet er lukket – velg en ny kilde": {
+    "nb": "Vinduet er lukket – velg en ny kilde",
+    "en": "Window closed – select a new source",
+    "de": "Fenster geschlossen – neue Quelle auswählen",
+    "es": "Ventana cerrada: elige otra fuente"
+  },
+  "Vinduet er lukket. Velg et nytt vindu.": {
+    "nb": "Vinduet er lukket. Velg et nytt vindu.",
+    "en": "The window is closed. Select another window.",
+    "de": "Das Fenster ist geschlossen. Wähle ein anderes Fenster.",
+    "es": "La ventana está cerrada. Selecciona otra."
+  },
+  "Vis det. Fortell det.": {
+    "nb": "Vis det. Fortell det.",
+    "en": "Show it. Tell it.",
+    "de": "Zeig es. Erklär es.",
+    "es": "Muéstralo. Cuéntalo."
+  },
+  "Vis en idé, forklar en prosess eller ta noen gjennom arbeidet ditt.\nVideoene lagres her, på din egen Mac.": {
+    "nb": "Vis en idé, forklar en prosess eller ta noen gjennom arbeidet ditt.\nVideoene lagres her, på din egen Mac.",
+    "en": "Show an idea, explain a process or walk someone through your work.\nYour videos are saved here, on your Mac.",
+    "de": "Zeige eine Idee, erkläre einen Ablauf oder führe durch deine Arbeit.\nDeine Videos werden hier auf deinem Mac gespeichert.",
+    "es": "Muestra una idea, explica un proceso o presenta tu trabajo.\nTus vídeos se guardan aquí, en tu Mac."
+  },
+  "Vis gjenopprettingsmappe i Finder": {
+    "nb": "Vis gjenopprettingsmappe i Finder",
+    "en": "Show recovery folder in Finder",
+    "de": "Wiederherstellungsordner im Finder anzeigen",
+    "es": "Mostrar carpeta de recuperación en Finder"
+  },
+  "Vis i Finder": {
+    "nb": "Vis i Finder",
+    "en": "Show in Finder",
+    "de": "Im Finder anzeigen",
+    "es": "Mostrar en Finder"
+  },
+  "macOS ber om tilgang første gang du bruker skjerm, kamera og mikrofon. Hvis du har sagt nei, kan du endre det i Systeminnstillinger.": {
+    "nb": "macOS ber om tilgang første gang du bruker skjerm, kamera og mikrofon. Hvis du har sagt nei, kan du endre det i Systeminnstillinger.",
+    "en": "macOS asks for permission the first time you use the screen, camera and microphone. If you denied access, change it in System Settings.",
+    "de": "macOS fragt beim ersten Zugriff auf Bildschirm, Kamera und Mikrofon nach Erlaubnis. Abgelehnte Zugriffe kannst du in den Systemeinstellungen ändern.",
+    "es": "macOS solicita permiso la primera vez que usas la pantalla, la cámara y el micrófono. Si lo denegaste, puedes cambiarlo en Ajustes del Sistema."
+  },
+  "{0} avbrutte opptak kunne ikke gjenopprettes automatisk. Filene er beholdt i {1}.": {
+    "nb": "{0} avbrutte opptak kunne ikke gjenopprettes automatisk. Filene er beholdt i {1}.",
+    "en": "Interrupted recordings that could not be recovered automatically: {0}. Files are preserved in {1}.",
+    "de": "Nicht automatisch wiederhergestellte Aufnahmen: {0}. Die Dateien liegen in {1}.",
+    "es": "Grabaciones interrumpidas que no se pudieron recuperar automáticamente: {0}. Los archivos se conservan en {1}."
+  },
+  "{0} ble koblet fra. Opptaket avsluttes.": {
+    "nb": "{0} ble koblet fra. Opptaket avsluttes.",
+    "en": "{0} disconnected. Recording will stop.",
+    "de": "{0} wurde getrennt. Die Aufnahme wird beendet.",
+    "es": "{0} se desconectó. La grabación se detendrá."
+  },
+  "{0} opptak · Lagret på denne Mac-en": {
+    "nb": "{0} opptak · Lagret på denne Mac-en",
+    "en": "Recordings: {0} · Saved on this Mac",
+    "de": "Aufnahmen: {0} · Auf diesem Mac gespeichert",
+    "es": "Grabaciones: {0} · Guardadas en este Mac"
+  },
+  "«{0}» kan hentes tilbake fra papirkurven i Finder.": {
+    "nb": "«{0}» kan hentes tilbake fra papirkurven i Finder.",
+    "en": "“{0}” can be restored from Trash in Finder.",
+    "de": "„{0}“ kann im Finder aus dem Papierkorb wiederhergestellt werden.",
+    "es": "«{0}» se puede recuperar de la papelera en Finder."
+  },
+  "Åpne": {
+    "nb": "Åpne",
+    "en": "Open",
+    "de": "Öffnen",
+    "es": "Abrir"
+  },
+  "Åpne Lewtech Record": {
+    "nb": "Åpne Lewtech Record",
+    "en": "Open Lewtech Record",
+    "de": "Lewtech Record öffnen",
+    "es": "Abrir Lewtech Record"
+  },
+  "Åpne bibliotekmappen i Finder": {
+    "nb": "Åpne bibliotekmappen i Finder",
+    "en": "Open library folder in Finder",
+    "de": "Mediatheksordner im Finder öffnen",
+    "es": "Abrir carpeta de la biblioteca en Finder"
+  },
+  "Åpne mappe": {
+    "nb": "Åpne mappe",
+    "en": "Open folder",
+    "de": "Ordner öffnen",
+    "es": "Abrir carpeta"
+  },
+  "Åpne opptaksmappen": {
+    "nb": "Åpne opptaksmappen",
+    "en": "Open recordings folder",
+    "de": "Aufnahmeordner öffnen",
+    "es": "Abrir carpeta de grabaciones"
+  },
+  "Åpne opptaksstudioet": {
+    "nb": "Åpne opptaksstudioet",
+    "en": "Open recording studio",
+    "de": "Aufnahmestudio öffnen",
+    "es": "Abrir estudio de grabación"
+  },
+  "Åpne skjermtilgang i macOS": {
+    "nb": "Åpne skjermtilgang i macOS",
+    "en": "Open macOS screen permissions",
+    "de": "macOS-Bildschirmberechtigungen öffnen",
+    "es": "Abrir permisos de pantalla de macOS"
+  },
+  "Åpner video…": {
+    "nb": "Åpner video…",
+    "en": "Opening video…",
+    "de": "Video wird geöffnet…",
+    "es": "Abriendo vídeo…"
+  },
+  "Opptak {0}": {
+    "nb": "Opptak {0}",
+    "en": "Recording {0}",
+    "de": "Aufnahme {0}",
+    "es": "Grabación {0}"
+  },
+  "kamera": {
+    "nb": "kamera",
+    "en": "camera",
+    "de": "Kamera",
+    "es": "la cámara"
+  },
+  "mikrofon": {
+    "nb": "mikrofon",
+    "en": "microphone",
+    "de": "Mikrofon",
+    "es": "el micrófono"
+  },
+  "Skjerm {0}": {
+    "nb": "Skjerm {0}",
+    "en": "Screen {0}",
+    "de": "Bildschirm {0}",
+    "es": "Pantalla {0}"
+  },
+  "Vindu": {
+    "nb": "Vindu",
+    "en": "Window",
+    "de": "Fenster",
+    "es": "Ventana"
+  },
+  "Pause / fortsett": {
+    "nb": "Pause / fortsett",
+    "en": "Pause / resume",
+    "de": "Pause / Fortsetzen",
+    "es": "Pausar / reanudar"
+  },
+  "Lagrer …": {
+    "nb": "Lagrer …",
+    "en": "Saving…",
+    "de": "Speichern…",
+    "es": "Guardando…"
+  },
+  "Eksportert: {0}": {
+    "nb": "Eksportert: {0}",
+    "en": "Exported: {0}",
+    "de": "Exportiert: {0}",
+    "es": "Exportado: {0}"
+  },
+  "Opptaket": {
+    "nb": "Opptaket",
+    "en": "Recording",
+    "de": "Aufnahme",
+    "es": "Grabación"
+  },
+  "Sortering": {
+    "nb": "Sortering",
+    "en": "Sort order",
+    "de": "Sortierung",
+    "es": "Orden"
+  },
+  "Eksporterer…": {
+    "nb": "Eksporterer…",
+    "en": "Exporting…",
+    "de": "Exportieren…",
+    "es": "Exportando…"
+  },
+  "OPPTAKSSTUDIO": {
+    "nb": "OPPTAKSSTUDIO",
+    "en": "RECORDING STUDIO",
+    "de": "AUFNAHMESTUDIO",
+    "es": "ESTUDIO DE GRABACIÓN"
+  },
+  "1080p · 30 bilder/sek · MP4": {
+    "nb": "1080p · 30 bilder/sek · MP4",
+    "en": "1080p · 30 fps · MP4",
+    "de": "1080p · 30 Bilder/Sek. · MP4",
+    "es": "1080p · 30 fps · MP4"
+  },
+  "OPPTAKSMODUS": {
+    "nb": "OPPTAKSMODUS",
+    "en": "RECORDING MODE",
+    "de": "AUFNAHMEMODUS",
+    "es": "MODO DE GRABACIÓN"
+  },
+  "KAMERA": {
+    "nb": "KAMERA",
+    "en": "CAMERA",
+    "de": "KAMERA",
+    "es": "CÁMARA"
+  },
+  "MIKROFON": {
+    "nb": "MIKROFON",
+    "en": "MICROPHONE",
+    "de": "MIKROFON",
+    "es": "MICRÓFONO"
+  },
+  "LAGRER": {
+    "nb": "LAGRER",
+    "en": "SAVING",
+    "de": "SPEICHERN",
+    "es": "GUARDANDO"
+  },
+  "PAUSE": {
+    "nb": "PAUSE",
+    "en": "PAUSED",
+    "de": "PAUSE",
+    "es": "EN PAUSA"
+  },
+  "Skjermopptak": {
+    "nb": "Skjermopptak",
+    "en": "Screen recording",
+    "de": "Bildschirmaufnahme",
+    "es": "Grabación de pantalla"
+  },
+  "Språk": {
+    "nb": "Språk",
+    "en": "Language",
+    "de": "Sprache",
+    "es": "Idioma"
+  },
+  "Følg Mac-ens språk": {
+    "nb": "Følg Mac-ens språk",
+    "en": "Follow Mac language",
+    "de": "Sprache des Mac verwenden",
+    "es": "Usar el idioma del Mac"
+  },
+  "Språket endres med én gang og huskes neste gang du åpner appen.": {
+    "nb": "Språket endres med én gang og huskes neste gang du åpner appen.",
+    "en": "Changes apply immediately and are remembered the next time you open the app.",
+    "de": "Änderungen gelten sofort und bleiben beim nächsten Start erhalten.",
+    "es": "Los cambios se aplican al instante y se recuerdan la próxima vez que abras la aplicación."
+  },
+  "Menyer og systemdialoger fra macOS følger Mac-ens egne språkinnstillinger.": {
+    "nb": "Menyer og systemdialoger fra macOS følger Mac-ens egne språkinnstillinger.",
+    "en": "macOS system menus and dialogs follow your Mac's language settings.",
+    "de": "Systemmenüs und Dialoge von macOS folgen den Spracheinstellungen deines Mac.",
+    "es": "Los menús y diálogos del sistema macOS siguen los ajustes de idioma del Mac."
+  }
+}

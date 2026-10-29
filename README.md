@@ -20,7 +20,7 @@
 
 Record a walkthrough, explain an idea or show someone how something works. Lewtech Record brings your screen, facecam and voice into one local video, with a calm interface in Lewtech's warm paper and forest-green palette.
 
-Built by **[Leander Wachendorf](https://computerportefolio.vercel.app)**. The app interface is currently in Norwegian; this guide is in English so more people can get started.
+Built by **[Leander Wachendorf](https://computerportefolio.vercel.app)**. The app supports **Norwegian Bokmål, English, German and Spanish**. Read the [Norwegian README](README.nb.md).
 
 > **Early release:** core recording and export are implemented. Automated media checks are available, but the full physical camera/microphone and long-session test matrix is not complete. Try a short recording with your own devices before relying on it for a long session. The artwork above is a brand illustration, not a screenshot.
 
@@ -35,6 +35,14 @@ Built by **[Leander Wachendorf](https://computerportefolio.vercel.app)**. The ap
 <img src="docs/assets/recording-flow.svg" alt="Choose your source, record with pause and resume, then keep your MP4 on your Mac." width="100%">
 
 **No account. No subscription. No built-in upload.** The app bundles its fonts and visual assets and does not need an internet connection to record. There is no system-audio recording, video editor, transcription or cloud-sharing service in this version.
+
+## Languages
+
+On first launch, Lewtech Record follows your Mac’s preferred languages, using English if none are supported. Choose **Settings → Language** to select Norwegian Bokmål, English, German or Spanish manually, or return to **Follow Mac language**. Your choice is saved and the interface updates without restarting the recording engine.
+
+App menus, recording controls, library, help and new app-generated errors use the selected language. Existing recording titles and device names are preserved. macOS dialogs follow system language preferences. See [translation maintenance](docs/LOCALIZATION.md).
+
+Language support is included in the current source and new local builds; previously published preview binaries are unchanged.
 
 ## Get started
 

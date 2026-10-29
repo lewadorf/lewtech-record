@@ -14,3 +14,5 @@ If a problem remains, [open an issue](https://github.com/lewadorf/lewtech-record
 Do not upload private screen recordings, unredacted logs or credentials. Reproduce with an empty desktop or synthetic content where possible. Preserve original files locally if investigating recovery; do not publish them just to report a bug.
 
 This is a community project with no guaranteed response time. For a suspected security vulnerability, follow [SECURITY.md](SECURITY.md).
+
+For language or layout issues, include the selected app language, your Mac’s preferred language and the exact label or screenshot. Supported app languages are Norwegian Bokmål, English, German and Spanish; Settings → Language can override the system preference.
