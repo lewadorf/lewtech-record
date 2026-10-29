@@ -16,7 +16,7 @@
 
 Record a walkthrough, explain an idea or show someone how something works. Lewtech Record brings your screen, facecam and voice into one local video, with a calm interface in Lewtech's warm paper and forest-green palette.
 
-Built by **[Leander Wachendorf](https://github.com/lewadorf)**. The app interface is currently in Norwegian; this guide is in English so more people can get started.
+Built by **[Leander Wachendorf](https://computerportefolio.vercel.app)**. The app interface is currently in Norwegian; this guide is in English so more people can get started.
 
 > **Early release:** core recording and export are implemented. Automated media checks are available, but the full physical camera/microphone and long-session test matrix is not complete. Try a short recording with your own devices before relying on it for a long session. The artwork above is a brand illustration, not a screenshot.
 
