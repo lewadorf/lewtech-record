@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="docs/assets/lewtech-record-icon.png" alt="Lewtech Record app logo" width="104" height="104">
+</p>
+
+<p align="center">
   <img src="docs/assets/lewtech-record-hero.png" alt="Lewtech Record — Your screen. Your story. Your Mac. Warm cream, forest green and terracotta illustration of a screen, camera and recording controls." width="100%">
 </p>
 
