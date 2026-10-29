@@ -1,5 +1,13 @@
 # Visual assets
 
+## Repository identity
+
+- `assets/lewtech-record-icon.png` is the existing app icon extracted from `packaging/AppIcon.icns`, displayed in the README.
+- `assets/social-preview.jpg` is the GitHub social sharing image. Its PNG source is also retained. Generated with the built-in image tool using the app icon as a reference; JPEG encoding keeps the upload below GitHub's 1 MB limit.
+- Prompt: Create a wide 2:1 repository identity card with the complete app icon at left, warm paper background, forest-green Manrope-style typography, and the exact text “Lewtech Record”, “Screen. Camera. Voice.” and “Made for Mac. Local by design.” Keep generous margins so the logo is not cropped.
+
+GitHub's browser favicon is controlled by GitHub, not by this repository.
+
 The README uses the same palette as the app: paper `#eeeade`, forest `#263a2e`, sage `#c7cabc` and terracotta `#925237`. The app bundles Manrope; the SVG uses a system-font fallback when Manrope is unavailable.
 
 | Asset | Origin | Purpose |
