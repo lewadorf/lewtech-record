@@ -15,7 +15,16 @@ jobs:
         run: |
           swift --version
           xcrun --sdk macosx --show-sdk-version
-      - name: Build app
-        run: ./scripts/build.sh
+      - name: Build and package app
+        run: ./scripts/package.sh
       - name: Verify media and persistence
         run: ./scripts/verify.sh
+      - name: Upload verified package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lewtech-Record-macOS-arm64
+          path: |
+            dist/*.zip
+            dist/*.sha256
+          if-no-files-found: error
+          retention-days: 14

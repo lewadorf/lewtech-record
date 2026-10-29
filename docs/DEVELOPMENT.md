@@ -54,4 +54,4 @@ For the longer fragmented-MP4 regression test, run `LEWTECH_STRESS_SECONDS=130 .
 
 The script builds for the host architecture and uses an ad-hoc signature. It does not create a universal binary, obtain certificates or notarize a build. A public binary intended for frictionless installation needs a separate Developer ID signing and Apple notarization process. Never commit certificates, signing credentials or API tokens.
 
-GitHub Actions runs build and verification checks for pushes and pull requests. Release publication remains explicit so an untested binary is not automatically presented as a stable release.
+GitHub Actions builds, packages and verifies the app on Apple Silicon for pushes and pull requests. Successful runs retain the app ZIP and checksum as a workflow artifact for 14 days. Release publication remains explicit so an untested binary is not automatically presented as a stable release.
